@@ -4,7 +4,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 export LANG=en_US.UTF-8
 export EDITOR='nvim'
-export TERMINAL='xterm'
+export TERMINAL='alacritty'
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
