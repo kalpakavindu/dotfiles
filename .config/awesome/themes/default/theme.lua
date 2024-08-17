@@ -31,7 +31,6 @@ theme.notification_fg = "#d4be98"
 
 theme.taglist_squares_sel = themes_path .. "default/taglist/squire_focus.png"
 theme.taglist_squares_unsel = themes_path .. "default/taglist/squire_normal.png"
--- theme.taglist_shape = gears.shape.rectangle(s,15, 15)
 
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
 theme.menu_height = dpi(15)
