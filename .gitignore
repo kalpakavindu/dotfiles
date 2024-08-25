@@ -1,5 +1,6 @@
 .config/go/
 .config/dconf/
 .config/gtx-3.0/
+.config/gtk-3.0/
 .config/nemo/
 .config/pulse/
