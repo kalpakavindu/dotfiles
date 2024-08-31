@@ -1,0 +1,5 @@
+[Default Applications]
+audio/flac=org.gnome.Rhythmbox3.desktop
+
+[Added Associations]
+audio/flac=org.gnome.Rhythmbox3.desktop;
