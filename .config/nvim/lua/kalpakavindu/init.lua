@@ -16,6 +16,7 @@ require("kalpakavindu.config.comment")
 require("kalpakavindu.config.lualine")
 require("kalpakavindu.config.gitsigns")
 require("kalpakavindu.config.tokyonight")
+require("kalpakavindu.config.codeium")
 
 -- Set colortheme
 vim.cmd.colorscheme("tokyonight")

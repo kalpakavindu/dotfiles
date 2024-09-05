@@ -9,17 +9,17 @@ M({ "n", "v" }, "<leader>fm", require("conform").format)
 M("v", "<C-Down>", ":m '>+1<CR>gv=gv")
 M("v", "<C-Up>", ":m '<-2<CR>gv=gv")
 
-M("n", "<C-c>", "<cmd>%y+<CR>") -- copy whole file
+M("n", "<C-c>", "<cmd>%y+<CR>", { desc = "Copy whole file" }) -- copy whole file
 
-M("n", "J", "mzJ`z")
+M("n", "J", "mzJ`z", { desc = "Next line join" })
 M("n", "n", "nzzzv")
 M("n", "N", "Nzzzv")
 
 M("n", "<leader>p", '"_dP')
 
-M("n", "<leader>y", '"+y')
-M("v", "<leader>y", '"+y')
-M("n", "<leader>Y", '"+Y')
+M("n", "<leader>y", '"+y', { desc = "Copy to clipboard" })
+M("v", "<leader>y", '"+y', { desc = "Copy to clipboard" })
+M("n", "<leader>Y", '"+Y', { desc = "Copy to clipboard" })
 M("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 M("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
