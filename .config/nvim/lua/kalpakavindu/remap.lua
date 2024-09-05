@@ -27,6 +27,7 @@ M("n", "<C-Left>", "<C-w>h")
 M("n", "<C-Right>", "<C-w>l")
 M("n", "<C-Down>", "<C-w>j")
 M("n", "<C-Up>", "<C-w>k")
+M("i", "<Esc>", "<C-c>")
 
 M("n", "<C-k>", "<cmd>cnext<CR>zz")
 M("n", "<C-j>", "<cmd>cprev<CR>zz")

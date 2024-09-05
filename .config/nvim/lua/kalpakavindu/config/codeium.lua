@@ -15,27 +15,27 @@ return function()
 		lua = true,
 	}
 
-	vim.keymap.set("i", "<leader>cy", function()
+	vim.keymap.set("i", "<Tab>", function()
 		return vim.fn["codeium#Accept"]()
 	end, { expr = true, silent = true })
 
-	vim.keymap.set("i", "<leader>ck", function()
-		return vim.fn["codeium#CycleCompletions"](1)
-	end, { expr = true, silent = true })
+	-- vim.keymap.set("i", "<C-c>k", function()
+	-- 	return vim.fn["codeium#CycleCompletions"](1)
+	-- end, { expr = true, silent = true })
 
-	vim.keymap.set("i", "<leader>cj", function()
+	vim.keymap.set("i", "<M-[>", function()
 		return vim.fn["codeium#CycleCompletions"](-1)
 	end, { expr = true, silent = true })
 
-	vim.keymap.set("i", "<leader>cx", function()
+	vim.keymap.set("i", "<C-[>", function()
 		return vim.fn["codeium#Clear"]()
 	end, { expr = true, silent = true })
 
-	vim.keymap.set("i", "<leader>c;", function()
+	vim.keymap.set("i", "<M-]>", function()
 		return vim.fn["codeium#CycleOrComplete"]()
 	end, { expr = true, silent = true })
 
-	vim.keymap.set("i", "<leader>ch", function()
+	vim.keymap.set("n", "<leader>coh", function()
 		return vim.fn["codeium#Chat"]()
 	end, { expr = true, silent = true })
 end
