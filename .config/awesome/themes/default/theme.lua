@@ -2,9 +2,8 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local themes_path = os.getenv("HOME") .. "/.config/awesome/themes/"
 local theme = {}
-local gears = require("gears")
 
-theme.font = "sans 8"
+theme.font = "inter 8"
 
 theme.bg_normal = "#090311"
 theme.bg_focus = "#1C0932"
@@ -29,8 +28,8 @@ theme.notification_icon_size = 80
 theme.notification_bg = "(0,0,0)"
 theme.notification_fg = "#d4be98"
 
-theme.taglist_squares_sel = themes_path .. "default/taglist/squire_focus.png"
-theme.taglist_squares_unsel = themes_path .. "default/taglist/squire_normal_active.png"
+-- theme.taglist_squares_sel = themes_path .. "default/taglist/squire_focus.png"
+-- theme.taglist_squares_unsel = themes_path .. "default/taglist/squire_normal_active.png"
 
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
 theme.menu_height = dpi(15)

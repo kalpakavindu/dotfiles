@@ -284,7 +284,26 @@ local globalkeys = gears.table.join(
 	-- end, { description = "lua execute prompt", group = "awesome" }),
 	awful.key({ modkey }, "p", function()
 		menubar.show()
-	end, { description = "show the menubar", group = "launcher" })
+	end, { description = "show the menubar", group = "launcher" }),
+
+	-- Brightness
+	awful.key({}, "XF86MonBrightnessDown", function()
+		awful.util.spawn("brightnessctl set 1%-")
+	end, { description = "Lower the screen brightness", group = "awesome" }),
+	awful.key({}, "XF86MonBrightnessUp", function()
+		awful.util.spawn("brightnessctl set +1%")
+	end, { description = "Raise the screen brightness", group = "awesome" }),
+
+	-- Audio Volume
+	awful.key({}, "XF86AudioLowerVolume", function()
+		awful.util.spawn("amixer -M sset Master 2%-,2%- unmute")
+	end, { description = "Lower system volume", group = "awesome" }),
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		awful.util.spawn("amixer -M sset Master 2%+,2%+ unmute")
+	end, { description = "Raise system volume", group = "awesome" }),
+	awful.key({}, "XF86AudioMute", function()
+		awful.util.spawn("amixer sset Master toggle")
+	end, { description = "Mute/Unmute system volume", group = "awesome" })
 )
 
 local clientkeys = gears.table.join(
@@ -331,24 +350,24 @@ for i = 1, 9 do
 	globalkeys = gears.table.join(
 		globalkeys,
 
-		-- Brightness
-		awful.key({}, "XF86MonBrightnessDown", function()
-			awful.util.spawn("brightnessctl set 1%-")
-		end),
-		awful.key({}, "XF86MonBrightnessUp", function()
-			awful.util.spawn("brightnessctl set +1%")
-		end),
-
-		-- Audio Volume
-		awful.key({}, "XF86AudioLowerVolume", function()
-			awful.util.spawn("amixer -M sset Master 2%-,2%- unmute")
-		end),
-		awful.key({}, "XF86AudioRaiseVolume", function()
-			awful.util.spawn("amixer -M sset Master 2%+,2%+ unmute")
-		end),
-		awful.key({}, "XF86AudioMute", function()
-			awful.util.spawn("amixer sset Master toggle")
-		end),
+		-- -- Brightness
+		-- awful.key({}, "XF86MonBrightnessDown", function()
+		-- 	awful.util.spawn("brightnessctl set 1%-")
+		-- end),
+		-- awful.key({}, "XF86MonBrightnessUp", function()
+		-- 	awful.util.spawn("brightnessctl set +1%")
+		-- end),
+		--
+		-- -- Audio Volume
+		-- awful.key({}, "XF86AudioLowerVolume", function()
+		-- 	awful.util.spawn("amixer -M sset Master 2%-,2%- unmute")
+		-- end),
+		-- awful.key({}, "XF86AudioRaiseVolume", function()
+		-- 	awful.util.spawn("amixer -M sset Master 2%+,2%+ unmute")
+		-- end),
+		-- awful.key({}, "XF86AudioMute", function()
+		-- 	awful.util.spawn("amixer sset Master toggle")
+		-- end),
 
 		awful.key({ modkey }, "#" .. i + 9, function()
 			local screen = awful.screen.focused()

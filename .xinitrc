@@ -5,6 +5,10 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
+# mount other ntfs partitions
+# ntfs-3g /dev/sda3 /mnt/windows -o uid=1000,gid=984,windows_names
+# ntfs-3g /dev/sda5 /mnt/local -o uid=1000,gid=984,windows_names
+
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
