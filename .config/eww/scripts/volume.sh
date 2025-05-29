@@ -22,7 +22,7 @@ mic_muted () {
 }
 
 vol_icon () {
-	if [ "$(pamixer --get-mute)" == "false" ]; then
+	if [[ "$(pamixer --get-mute)" == "false" ]]; then
 		current=$(pamixer --get-volume)
 		if [[ "$current" -eq "0" ]]; then
 			echo ""
@@ -39,7 +39,7 @@ vol_icon () {
 }
 
 mic_icon () {
-	if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
+	if [[ "$(pamixer --default-source --get-mute)" == "false" ]]; then
 		current=$(pamixer --default-source --get-volume)
 		if [[ "$current" -eq "0" ]]; then
 			echo ""
@@ -64,7 +64,7 @@ mic_set () {
 }
 
 vol_toggle () {
-	if [ "$(pamixer --get-mute)" == "false" ]; then
+	if [[ "$(pamixer --get-mute)" == "false" ]]; then
 		pamixer -m
 	else
 		pamixer -u
@@ -72,7 +72,7 @@ vol_toggle () {
 }
 
 mic_toggle() {
-	if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
+	if [[ "$(pamixer --default-source --get-mute)" == "false" ]]; then
 		pamixer --default-source -m
 	else
 		pamixer --default-source -u

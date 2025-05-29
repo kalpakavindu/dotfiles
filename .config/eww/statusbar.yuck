@@ -207,5 +207,6 @@
   )
   :stacking "fg"
   :exclusive true
+  :namespace "eww_statusbar"
   (bar_I)
 )

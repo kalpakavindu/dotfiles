@@ -27,11 +27,11 @@
 (defvar net_enp_list "[]")
 
 ; Listners
-(deflisten workspaces_arr :initial "[]" `scripts/workspaces.sh`)
-(deflisten back_icon :initial "󰛩" `scripts/backlight.sh --listen-brightness`)
-(deflisten vol_icon :initial "" `scripts/volume.sh --listen-volume`)
-(deflisten mic_icon :initial "" `scripts/volume.sh --listen-mic`)
-(deflisten net_icon :initial "" `scripts/network.sh --listen-icon`)
+(deflisten workspaces_arr :initial "[]" "scripts/workspaces.sh")
+(deflisten back_icon :initial "󰛩" "scripts/backlight.sh --listen-brightness")
+(deflisten vol_icon :initial "" "scripts/volume.sh --listen-volume")
+(deflisten mic_icon :initial "" "scripts/volume.sh --listen-mic")
+(deflisten net_icon :initial "" "scripts/network.sh --listen-icon")
 
 ; Dynamic
 (defpoll bat_icon :interval "2s" "scripts/battery.sh --icon")
@@ -126,13 +126,13 @@
     (box
       :class "wrapper"
       :orientation "h"
-      :halign "start"
-      :valign "center"
       :hexpand true
       :vexpand false
+      :halign "start"
+      :valign "center"
       :space-evenly false
       :spacing 10
-      (label :text {icon} :class "icon" :hexpand true)
+      (label  :text {icon} :class "icon" :hexpand true)
       (label :text {label} :class "text" :hexpand true)
     )
   )
@@ -151,15 +151,15 @@
     :hexpand true
     :class "pmenu"
     
-    (_pmenu_item :onclick "" :label "Lock Screen" :icon "")
-    (_pmenu_item :onclick "uwsm stop" :label "Logout" :icon "")
+    (_pmenu_item :onclick "" :label "Lock Screen" :icon "󰌾")
+    (_pmenu_item :onclick "uwsm stop" :label "Logout" :icon "󰍃")
     
     (_seperator :hide false)
     
-    (_pmenu_item :onclick "" :label "Suspend" :icon "")
-    (_pmenu_item :onclick "reboot" :label "Restart" :icon "")
-    (_pmenu_item :onclick "" :label "Hybernate" :icon "")
-    (_pmenu_item :onclick "shutdown now" :label "Shutdown" :icon "")
+    (_pmenu_item :onclick "" :label "Suspend" :icon "󰒲")
+    (_pmenu_item :onclick "reboot" :label "Restart" :icon "󰜉")
+    (_pmenu_item :onclick "" :label "Hybernate" :icon "󰤁")
+    (_pmenu_item :onclick "shutdown now" :label "Shutdown" :icon "󰐥")
     
   )
 )
@@ -173,6 +173,7 @@
     :width "150px"
     :height "50px"
   )
+  :namespace "eww_popup"
   (pmenu)
 )
 ; -------- Power Menu --------
@@ -198,6 +199,7 @@
     :width "270px"
     :height "60px"
   )
+  :namespace "eww_popup"
   (cal)
 )
 ; -------- Calendar --------
@@ -263,6 +265,7 @@
     :width "280px"
     :height "60px"
   )
+  :namespace "eww_popup"
   (audio_control)
 )
 ; -------- Audio Popup --------
@@ -298,6 +301,7 @@
     :width "280px"
     :height "30px"
   )
+  :namespace "eww_popup"
   (backlight_control)
 )
 ; -------- Backlight Popup --------
@@ -392,6 +396,7 @@
     :width "280px"
     :height "30px"
   )
+  :namespace "eww_popup"
   (battery_control)
 )
 ; -------- Battery Popup --------
@@ -650,6 +655,7 @@
     :width "300px"
     :height "190px"
   )
+  :namespace "eww_popup"
   (network_control)
 )
 ; -------- Network Popup --------
@@ -660,7 +666,7 @@
     :orientation "h"
     :space-evenly false
     :hexpand false
-    :class "vol_notifier"
+    :class "notifier"
     
     (label :halign "start" :hexpand true :text {vol_icon} :class "icon")
     
@@ -687,6 +693,8 @@
     :width "200px"
     :height "50px"
   )
+  :stacking "overlay"
+  :namespace "eww_popup"
   (volume_notifier_data)
 )
 ; -------- Volume Notifier --------
@@ -697,7 +705,7 @@
     :orientation "h"
     :space-evenly false
     :hexpand false
-    :class "vol_notifier"
+    :class "notifier"
     
     (label :halign "start" :hexpand true :text {back_icon} :class "icon")
     
@@ -724,6 +732,8 @@
     :width "200px"
     :height "50px"
   )
+  :stacking "overlay"
+  :namespace "eww_popup"
   (brightness_notifier_data)
 )
 ; -------- Brightness Notifier --------

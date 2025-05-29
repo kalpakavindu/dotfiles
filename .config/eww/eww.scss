@@ -2,6 +2,8 @@
 
 @import "/home/kalpakavindu/.cache/wal/colors.scss";
 
+$popup-background: rgba($background, 0.8);
+
 * {
   all: unset;
   font-family: "JetBrainsMono Nerd Font Mono";
@@ -62,6 +64,35 @@ scrolledwindow contents trough slider {
   border-radius: 10px;
   min-height: 50px;
   min-width: 5px;
+}
+
+calender {
+  border-radius: 10px;
+  font-size: 12px;
+  color: rgba($color3, 0.6);
+}
+
+calendar:selected {
+  border-radius: 10px;
+  color: $background;
+  background-color: $color3;
+}
+
+calendar.header {
+  color: $color3;
+  font-weight: bold;
+}
+
+calendar.button {
+  color: $color3;
+}
+
+calendar.highlight {
+  color: rgba($color11, 0.5);
+}
+
+calendar:indeterminate {
+  color: rgba($color11, 0.2);
 }
 
 .seperator {
@@ -150,6 +181,65 @@ scrolledwindow contents trough slider {
       font-size: 24px;
       border-radius: 10px;
       transition: background-color linear 300ms;
+    }
+  }
+
+  .tray {
+    background-color: $background;
+    border-radius: 10px;
+
+    .system_tray {
+      background-color: $background;
+      padding: 0 10px;
+      border-radius: 10px;
+
+      window menu {
+        font-size: 12px;
+        background-color: $background;
+        border-radius: 10px;
+        padding: 5px;
+
+        & > separator {
+          opacity: 1;
+          margin: 5px 10px;
+          min-height: 1px;
+          background-color: rgba($foreground, 0.1);
+        }
+
+        menuitem {
+          padding: 5px;
+          background-color: transparent;
+          border-radius: 5px;
+          transition: background-color linear 300ms;
+          color: rgba($foreground, 0.8);
+
+          arrow.right {
+            min-width: 2px;
+            min-height: 16px;
+            background-color: rgba($foreground, 0.8);
+          }
+
+          &:hover {
+            background-color: rgba($foreground, 0.05);
+          }
+
+          &:disabled {
+            color: rgba($color4, 0.7);
+          }
+        }
+      }
+    }
+
+    .revealer {
+      padding: 0 5px;
+      background-color: transparent;
+      border-radius: 10px;
+      font-size: 20px;
+      color: $color4;
+
+      &:hover {
+        background-color: rgba($foreground, 0.1);
+      }
     }
   }
 
@@ -247,7 +337,7 @@ scrolledwindow contents trough slider {
 }
 
 .pmenu {
-  background-color: $background;
+  background-color: $popup-background;
   border-radius: 10px;
   border: 1px solid rgba($foreground, 0.1);
   padding: 5px;
@@ -273,7 +363,7 @@ scrolledwindow contents trough slider {
       padding: 0 10px;
 
       .icon {
-        font-size: 20px;
+        font-size: 22px;
         color: rgba($foreground, 0.8);
       }
 
@@ -288,44 +378,15 @@ scrolledwindow contents trough slider {
 
 .calendar_wrapper {
   border-radius: 10px;
-  background-color: $background;
+  background-color: $popup-background;
   padding: 5px;
   border: 1px solid rgba($color3, 0.1);
-}
-
-calender {
-  border-radius: 10px;
-  font-size: 12px;
-  color: rgba($color3, 0.6);
-}
-
-calendar:selected {
-  border-radius: 10px;
-  color: $background;
-  background-color: $color3;
-}
-
-calendar.header {
-  color: $color3;
-  font-weight: bold;
-}
-
-calendar.button {
-  color: $color3;
-}
-
-calendar.highlight {
-  color: rgba($color11, 0.5);
-}
-
-calendar:indeterminate {
-  color: rgba($color11, 0.2);
 }
 
 .audio_control,
 .backlight_control,
 .network_control {
-  background-color: $background;
+  background-color: $popup-background;
   border-radius: 10px;
   padding: 10px;
   border: 1px solid rgba($color5, 0.3);
@@ -363,7 +424,7 @@ calendar:indeterminate {
 
 .network_control,
 .battery_control {
-  background-color: $background;
+  background-color: $popup-background;
   border-radius: 10px;
   padding: 10px;
   border: 1px solid rgba($color4, 0.3);
@@ -566,68 +627,9 @@ calendar:indeterminate {
   }
 }
 
-.tray {
-  background-color: $background;
+.notifier {
   border-radius: 10px;
-
-  .system_tray {
-    background-color: $background;
-    padding: 0 10px;
-    border-radius: 10px;
-
-    window menu {
-      font-size: 12px;
-      background-color: $background;
-      border-radius: 10px;
-      padding: 5px;
-
-      & > separator {
-        opacity: 1;
-        margin: 5px 10px;
-        min-height: 1px;
-        background-color: rgba($foreground, 0.1);
-      }
-
-      menuitem {
-        padding: 5px;
-        background-color: transparent;
-        border-radius: 5px;
-        transition: background-color linear 300ms;
-        color: rgba($foreground, 0.8);
-
-        arrow.right {
-          min-width: 2px;
-          min-height: 16px;
-          background-color: rgba($foreground, 0.8);
-        }
-
-        &:hover {
-          background-color: rgba($foreground, 0.05);
-        }
-
-        &:disabled {
-          color: rgba($color4, 0.7);
-        }
-      }
-    }
-  }
-
-  .revealer {
-    padding: 0 5px;
-    background-color: transparent;
-    border-radius: 10px;
-    font-size: 20px;
-    color: $color4;
-
-    &:hover {
-      background-color: rgba($foreground, 0.1);
-    }
-  }
-}
-
-.vol_notifier {
-  border-radius: 10px;
-  background-color: $background;
+  background-color: $popup-background;
   border: 1px solid rgba($color5, 0.2);
   padding: 0 10px;
 
