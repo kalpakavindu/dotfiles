@@ -1,0 +1,5 @@
+[Added Associations]
+text/plain=code_code.desktop;
+application/x-shellscript=code_code.desktop;
+application/yaml=code_code.desktop;
+application/xml=code_code.desktop;

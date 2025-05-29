@@ -1,0 +1,36 @@
+general.import = [
+  # "/home/kalpakavindu/.cache/wal/colors-alacritty.toml",
+  "/home/kalpakavindu/.config/alacritty/colors.toml",
+  "/home/kalpakavindu/.config/alacritty/fonts.toml",
+]
+
+[cursor]
+blink_interval = 750
+unfocused_hollow = true
+
+[cursor.style]
+shape = "beam"
+blinking = "off"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Control"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "full"
+opacity = 0.8
+blur = true
+dynamic_title = true
+
+[window.dimensions]
+columns = 100
+lines = 22
+
+[window.padding]
+x = 5
+y = 5

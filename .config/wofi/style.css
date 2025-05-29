@@ -1,0 +1,71 @@
+@import url("/home/kalpakavindu/.cache/wal/colors-waybar.css");
+
+* {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+window {
+  font-size: 14px;
+  font-family: "JetBrainsMono Nerd Font";
+  background-color: transparent;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+#outer-box {
+  margin: 0;
+  padding: 0px 0px 10px 0px;
+  background-color: @background;
+  opacity: 1;
+  border-radius: 10px;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 1px;
+  border-style: solid;
+}
+
+#inner-box {
+  margin: 5px;
+  background-color: @background;
+  opacity: 1;
+  border-radius: 10px;
+}
+
+#entry {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#entry #text {
+  padding: 0px 0px 0px 10px;
+  font-weight: normal;
+  color: @color7;
+}
+
+#entry:selected {
+  background-color: @color4;
+}
+
+#entry:selected #text {
+  padding: 0px 0px 0px 10px;
+  font-weight: normal;
+  color: @color0;
+}
+
+#input {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 5px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+}
+
+#image {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#scroll {
+  margin: 0px 2px;
+}
