@@ -1,6 +1,8 @@
-# dotfiles
+# Kalpa's dotfiles
 
 My Linux configuration files.
+
+**Warning**: Use this files carefully with your own risk.
 
 ## Dependancies
 
