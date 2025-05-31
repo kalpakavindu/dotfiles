@@ -153,6 +153,7 @@
     :halign "start"
     :hexpand true
     (appmenu)
+    (workspaces)
   )
 )
 
@@ -191,7 +192,6 @@
     :orientation "h"
     :hexpand true
     (widgets_left)
-    (widgets_middle)
     (widgets_right)
   )
 )
