@@ -21,11 +21,6 @@ My Linux configuration files.
   - swaylock
   - cliphist
 
-- nautilus
-
-  - nautilus-open-any-terminal
-  - nautilus-python
-
 - eww<sup>AUR</sup>
 
   - rustup
@@ -39,11 +34,10 @@ My Linux configuration files.
   - gcc-libs
   - glibc
   - ttf-jetbrains-mono-nerd
-  - alsa-tools
+  - alsa-utils
 
 - alacritty
 - htop
-- neofetch
 - swaync
 - wofi
 - brightnessctl
@@ -56,3 +50,19 @@ My Linux configuration files.
 - gawk
 - grep
 - sassc
+- inotify-tools
+
+## Softwares
+
+### visual-studio-code-bin<sup>AUR</sup>
+
+#### Depedancies
+
+- libsecret
+- trash-cli
+
+### zsh
+
+#### Depedancies
+
+- zsh-autosuggestions

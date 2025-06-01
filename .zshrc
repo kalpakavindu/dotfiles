@@ -1,12 +1,12 @@
 setopt prompt_subst
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/usr/share/zsh"
 export LANG=en_US.UTF-8
 export EDITOR='code'
 export TERMINAL='alacritty'
-export NVM_DIR="$HOME/.nvm"
 export GDK_BACKEND='x11'
+export ELECTRON_TRASH=trash-cli code
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -64,5 +64,4 @@ update_prompt
 
 RPROMPT="${return_code}"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source ${ZSH}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
