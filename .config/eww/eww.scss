@@ -2,11 +2,11 @@
 
 @import "/home/kalpakavindu/.cache/wal/colors.scss";
 
-$popup-background: rgba($background, 0.8);
+$popup-background: rgba($background, 0.6);
 
 * {
   all: unset;
-  font-family: "JetBrainsMono Nerd Font Mono";
+  font-family: "Ubuntu Nerd Font";
 }
 
 .background {
@@ -22,7 +22,7 @@ progressbar trough {
 
 scale trough {
   background-color: rgba($foreground, 0.1);
-  box-shadow: 0px 2px 3px 2px #06060b;
+  box-shadow: 0px 2px 3px 2px #06060b84;
   border-radius: 10px;
   min-height: 10px;
   min-width: 100px;
@@ -42,13 +42,13 @@ scale trough highlight {
 tooltip.background {
   background-color: rgba($background, 0.9);
   border: 1px solid rgba($foreground, 0.1);
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 10px;
   color: $foreground;
 }
 
 tooltip label {
-  margin: 6px;
+  margin: 0 7px 3px 7px;
 }
 
 scrolledwindow contents trough {
@@ -108,8 +108,8 @@ calendar:indeterminate {
 .tile {
   background: transparent;
   color: $color4;
-  font-size: 28px;
-  padding: 5px 0px;
+  font-size: 24px;
+  padding: 8px 0px;
   border-radius: 10px;
   border: 1px solid rgba($foreground, 0.1);
   transition: background linear 300ms;
@@ -130,9 +130,9 @@ calendar:indeterminate {
 
 .bar_control {
   .control_icon {
-    font-size: 30px;
-    margin-right: 20px;
-    padding: 0px 10px;
+    font-size: 16px;
+    margin-right: 24px;
+    padding: 5px 10px;
     color: $color5;
     background-color: transparent;
     border: 1px solid rgba($color5, 0.2);
@@ -152,6 +152,7 @@ calendar:indeterminate {
   .control_text {
     font-size: 14px;
     color: $color5;
+    margin-bottom: 3px;
   }
 
   .control_bar scale trough {
@@ -178,7 +179,7 @@ calendar:indeterminate {
       background-color: transparent;
       color: $foreground;
       padding: 0px 10px;
-      font-size: 24px;
+      font-size: 16px;
       border-radius: 10px;
       transition: background-color linear 300ms;
     }
@@ -234,7 +235,7 @@ calendar:indeterminate {
       padding: 0 5px;
       background-color: transparent;
       border-radius: 10px;
-      font-size: 20px;
+      font-size: 14px;
       color: $color4;
 
       &:hover {
@@ -252,7 +253,7 @@ calendar:indeterminate {
       color: $color8;
       padding: 5px 10px;
       border-radius: 10px;
-      font-size: 20px;
+      font-size: 12px;
       transition: background-color linear 300ms;
 
       &.active {
@@ -275,13 +276,13 @@ calendar:indeterminate {
       transition: background-color linear 300ms;
 
       .icon {
-        font-size: 24px;
+        font-size: 12px;
       }
 
       .text {
-        margin-left: 10px;
-        font-size: 14px;
-        font-weight: 600;
+        margin-left: 5px;
+        font-size: 12px;
+        font-weight: 500;
       }
     }
 
@@ -293,7 +294,8 @@ calendar:indeterminate {
   }
 
   .volume,
-  .backlight {
+  .backlight,
+  .notification {
     background-color: $background;
     border-radius: 10px;
 
@@ -301,9 +303,22 @@ calendar:indeterminate {
       background-color: transparent;
       color: $color5;
       padding: 0px 10px;
-      font-size: 28px;
+      font-size: 14px;
       border-radius: 10px;
       transition: background-color linear 300ms;
+    }
+  }
+
+  .backlight {
+    button {
+      font-size: 18px;
+    }
+  }
+
+  .notification {
+    button {
+      color: $color11;
+      font-size: 18px;
     }
   }
 
@@ -313,15 +328,24 @@ calendar:indeterminate {
       color: $color4;
 
       .icon {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
 
-  .network {
+  .battery {
     .content {
       .icon {
-        font-size: 26px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .clock {
+    .content {
+      .icon {
+        font-size: 16px;
+        margin-right: 5px;
       }
     }
   }
@@ -360,17 +384,17 @@ calendar:indeterminate {
     }
 
     .wrapper {
-      padding: 0 10px;
+      padding: 4px 10px;
 
       .icon {
-        font-size: 22px;
+        font-size: 20px;
         color: rgba($foreground, 0.8);
       }
 
       .text {
-        font-size: 12px;
+        font-size: 14px;
         color: rgba($foreground, 0.8);
-        font-weight: bold;
+        font-weight: 500;
       }
     }
   }
@@ -383,33 +407,21 @@ calendar:indeterminate {
   border: 1px solid rgba($color3, 0.1);
 }
 
+.network_control,
+.battery_control,
 .audio_control,
-.backlight_control,
-.network_control {
-  background-color: $popup-background;
+.backlight_control {
   border-radius: 10px;
   padding: 10px;
-  border: 1px solid rgba($color5, 0.3);
-
-  .seperator {
-    .line {
-      background-color: rgba($color5, 0.2);
-    }
-  }
-
-  .mic {
-    .control_icon {
-      font-size: 30px;
-    }
-  }
+  background-color: $popup-background;
 
   .footer {
-    margin-top: 15px;
+    margin-top: 10px;
 
     .settings_btn {
       background-color: transparent;
-      font-size: 24px;
-      padding: 2px 10px;
+      font-size: 16px;
+      padding: 5px 8px;
       border-radius: 10px;
       transition: background-color linear 300ms;
       color: $color6;
@@ -422,11 +434,20 @@ calendar:indeterminate {
   }
 }
 
+.audio_control,
+.backlight_control,
+.network_control {
+  border: 1px solid rgba($color5, 0.3);
+
+  .seperator {
+    .line {
+      background-color: rgba($color5, 0.2);
+    }
+  }
+}
+
 .network_control,
 .battery_control {
-  background-color: $popup-background;
-  border-radius: 10px;
-  padding: 10px;
   border: 1px solid rgba($color4, 0.3);
 
   .seperator {
@@ -437,7 +458,7 @@ calendar:indeterminate {
 
   .profile_text {
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 
     .title {
       color: $color4;
@@ -450,15 +471,8 @@ calendar:indeterminate {
   }
 
   .footer {
-    margin-top: 15px;
-
     .settings_btn {
-      background-color: transparent;
-      font-size: 24px;
-      padding: 2px 10px;
-      border-radius: 10px;
       color: $color7;
-      transition: background-color linear 300ms;
       border: 1px solid rgba($color7, 0.1);
 
       &:hover {
@@ -495,7 +509,7 @@ calendar:indeterminate {
       label {
         font-size: 14px;
         color: $color4;
-        font-weight: 700;
+        font-weight: 400;
       }
 
       button {
@@ -545,7 +559,7 @@ calendar:indeterminate {
           margin-right: 15px;
 
           label {
-            font-size: 30px;
+            font-size: 28px;
             color: $color4;
           }
         }
@@ -610,7 +624,7 @@ calendar:indeterminate {
     .details {
       .interface {
         .icon {
-          font-size: 24px;
+          font-size: 12px;
         }
       }
 
@@ -620,7 +634,7 @@ calendar:indeterminate {
 
       .net_data {
         .icon {
-          font-size: 30px;
+          font-size: 18px;
         }
       }
     }
@@ -634,8 +648,9 @@ calendar:indeterminate {
   padding: 0 10px;
 
   .icon {
-    font-size: 32px;
+    font-size: 18px;
     color: $color5;
+    margin-right: 5px;
   }
 
   progressbar trough progress {

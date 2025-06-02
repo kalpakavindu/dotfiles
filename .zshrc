@@ -1,12 +1,14 @@
+#!/usr/bin/zsh
+# Written by KalpaKavindu <kalpadevonline@gmail.com>
+
 setopt prompt_subst
 
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 export ZSH="/usr/share/zsh"
-export LANG=en_US.UTF-8
-export EDITOR='code'
-export TERMINAL='alacritty'
-export GDK_BACKEND='x11'
-export ELECTRON_TRASH=trash-cli code
+export LANG="en_US.UTF-8"
+export EDITOR="code"
+export TERMINAL="alacritty"
+export GDK_BACKEND="wayland"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000

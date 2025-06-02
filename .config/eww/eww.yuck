@@ -26,12 +26,15 @@
 (defvar net_wifi "{}")
 (defvar net_enp_list "[]")
 
+(defvar not_count "0")
+
 ; Listners
 (deflisten workspaces_arr :initial "[]" "scripts/workspaces.sh")
 (deflisten back_icon :initial "󰛩" "scripts/backlight.sh --listen-brightness")
 (deflisten vol_icon :initial "" "scripts/volume.sh --listen-volume")
 (deflisten mic_icon :initial "" "scripts/volume.sh --listen-mic")
 (deflisten net_icon :initial "" "scripts/network.sh --listen-icon")
+(deflisten not_icon :initial "󰂚" "scripts/swaync.sh --listen")
 
 ; Dynamic
 (defpoll bat_icon :interval "2s" "scripts/battery.sh --icon")

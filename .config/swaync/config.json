@@ -30,7 +30,7 @@
   "hide-on-clear": false,
   "hide-on-action": true,
   "text-empty": "No Notifications",
-  "widgets": ["mpris", "title", "notifications", "buttons-grid", "backlight"],
+  "widgets": ["mpris", "notifications", "title", "buttons-grid"],
   "widget-config": {
     "inhibitors": {
       "text": "Inhibitors",
@@ -59,22 +59,17 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": "󰖩",
-          "command": "iwgtk"
-        },
-        {
-          "label": "",
-          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+          "label": "󱋼",
+          "command": "",
           "type": "toggle"
         },
         {
-          "label": "󰍭",
-          "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-          "type": "toggle"
+          "label": "󰹑",
+          "command": ""
         },
         {
-          "label": "",
-          "command": "kooha"
+          "label": "",
+          "command": ""
         }
       ]
     }

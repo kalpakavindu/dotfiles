@@ -144,6 +144,22 @@
   )
 )
 
+(defwidget notification []
+  (box
+    :class "notification"
+    :orientation "h"
+    :space-evenly false
+    :hexpand true
+    (button
+      :tooltip "${not_count == '0' ? 'No' : not_count} notification${not_count == '1' ? '' : 's'}"
+      :hexpand true
+      :onclick "swaync-client -t -sw"
+      :onrightclick "swaync-client -d"
+      {not_icon}
+    )
+  )
+)
+
 (defwidget widgets_left []
   (box
     :class "widgets_left"
@@ -183,6 +199,7 @@
     (network)
     (battery)
     (clock)
+    (notification)
   )
 )
 
@@ -205,7 +222,7 @@
     :height "34px"
     :anchor "top center"
   )
-  :stacking "fg"
+  :stacking "overlay"
   :exclusive true
   :namespace "eww_statusbar"
   (bar_I)
