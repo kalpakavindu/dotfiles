@@ -1,35 +1,25 @@
 #!/usr/bin/env bash
 # Written by KalpaKavindu <kalpadevonline@gmail.com>
 
-powermenu () {
-  eww open --toggle powermenu_popup
+toggle_window() {
+  local open='0'
+  
+  while IFS=" : " read -r _ wname; do
+    if [[ "$wname" == *"_popup" ]]; then
+      if [[ "$1" == "$wname" ]]; then
+        open='1'
+      fi
+      
+      eww close "$wname" > /dev/null 2>&1
+      
+    fi
+  done < <(eww active-windows)
+  
+  if [[ "$open" == "1" ]]; then
+    eww close "$1"
+  else
+    eww open "$1"
+  fi
 }
 
-calendar () {
-  eww open --toggle calendar_popup
-}
-
-audio () {
-  eww open --toggle audio_popup
-}
-
-backlight () {
-  eww open --toggle backlight_popup
-}
-
-battery () {
-  eww open --toggle battery_popup
-}
-
-network () {
-  eww open --toggle network_popup
-}
-
-case $1 in
-  --calendar) calendar ;;
-  --audio) audio ;;
-  --backlight) backlight ;;
-  --battery) battery ;;
-  --network) network ;;
-  --powermenu) powermenu ;;
-esac
+toggle_window $1

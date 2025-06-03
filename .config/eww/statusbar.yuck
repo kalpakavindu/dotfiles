@@ -6,7 +6,7 @@
     :orientation "h"
     :halign "start"
     (button
-      :onclick "scripts/open.sh --powermenu"
+      :onclick "scripts/open.sh powermenu_popup"
       "󰣇"
     )
   )
@@ -32,7 +32,7 @@
 
 (defwidget clock []
   (eventbox
-    :onclick "scripts/open.sh --calendar"
+    :onclick "scripts/open.sh calendar_popup"
     :class "clock"
     (box
       :class "content"
@@ -53,7 +53,7 @@
     :hexpand true
     (button
       :hexpand true
-      :onclick "scripts/open.sh --audio"
+      :onclick "scripts/open.sh audio_popup"
       {vol_icon}
     )
   )
@@ -67,7 +67,7 @@
     :hexpand true
     (button
       :hexpand true
-      :onclick "scripts/open.sh --backlight"
+      :onclick "scripts/open.sh backlight_popup"
       {back_icon}
     )
   )
@@ -75,7 +75,7 @@
 
 (defwidget battery []
   (eventbox
-    :onclick "scripts/open.sh --battery"
+    :onclick "scripts/open.sh battery_popup"
     :class "battery"
     (box
       :class "content"
@@ -90,7 +90,7 @@
 
 (defwidget network []
   (eventbox
-    :onclick "scripts/open.sh --network"
+    :onclick "scripts/open.sh network_popup"
     :class "network"
     (box
       :class "content"
@@ -222,7 +222,7 @@
     :height "34px"
     :anchor "top center"
   )
-  :stacking "overlay"
+  :stacking "fg"
   :exclusive true
   :namespace "eww_statusbar"
   (bar_I)

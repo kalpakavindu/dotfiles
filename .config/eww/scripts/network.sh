@@ -45,7 +45,7 @@ get_enp_list () {
       else
         list+="{\"ifname\":\"$ifname\",\"cname\":\"${cname//%sep%/' '}\",\"inuse\":0},"
       fi
-    done < <(nmcli d | grep "ethernet" | grep "connected" | awk '{
+      done < <(nmcli d | grep "ethernet" | grep "connected" | awk '{
       c = ""
       for (i = 4; i<= NF; i++) {
         c = c $i "%sep%"
@@ -61,7 +61,7 @@ get_enp_list () {
 get_icon () {
   if [[ "$CURRENT_INTERFACE" == "enp"* ]]; then
     echo ""
-  elif [[ "$CURRENT_INTERFACE" == "wlp"* ]]; then
+    elif [[ "$CURRENT_INTERFACE" == "wlp"* ]]; then
     echo "󰖩"
   else
     echo ""
@@ -72,9 +72,9 @@ get_wifi_icon () {
   if [[ "$2" == 1 ]]; then
     if [[ "$1" -le "25" ]];then
       echo "󰤡"
-    elif [[ "$1" -le "50" ]]; then
+      elif [[ "$1" -le "50" ]]; then
       echo "󰤤"
-    elif [[ "$1" -le "75" ]]; then
+      elif [[ "$1" -le "75" ]]; then
       echo "󰤧"
     else
       echo "󰤪"
@@ -82,9 +82,9 @@ get_wifi_icon () {
   else
     if [[ "$1" -le "25" ]];then
       echo "󰤟"
-    elif [[ "$1" -le "50" ]]; then
+      elif [[ "$1" -le "50" ]]; then
       echo "󰤢"
-    elif [[ "$1" -le "75" ]]; then
+      elif [[ "$1" -le "75" ]]; then
       echo "󰤥"
     else
       echo "󰤨"
@@ -120,7 +120,7 @@ get_wifi () {
       if [[ "$inuse" == "1" ]]; then
         d="{\"bssid\":\"$bssid\",\"signal\":$signal,\"ssid\":\"${ssid//%sep%/' '}\",\"icon\":\"$icon\"}"
       fi
-    done < <(nmcli -f BSSID,SIGNAL,SSID d wifi list --rescan yes | awk 'NR>1 {
+      done < <(nmcli -f BSSID,SIGNAL,SSID d wifi list --rescan yes | awk 'NR>1 {
       ssid = ""
       for (i = 3; i <= NF; i++) {
         ssid = ssid $i "%sep%"
@@ -166,6 +166,6 @@ case $1 in
       get_wifi
     done
   ;;
-
+  
   --toggle-wifi) toggle_wifi ;;
 esac

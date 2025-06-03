@@ -5,12 +5,12 @@ listener(){
   swaync-client -s | while read -r line; do
     count=$(echo "$line" | jq -r ".count")
     dnd=$(echo "$line" | jq -r ".dnd")
-
+    
     eww update not_count="$count"
-
+    
     if [[ "$dnd" == "true" ]]; then
       echo "󰂛"
-    elif [[ "$count" == "0" ]]; then
+      elif [[ "$count" == "0" ]]; then
       echo "󰂚"
     else
       echo "󱅫"
@@ -20,5 +20,5 @@ listener(){
 
 
 case $1 in
- --listen) listener ;;
+  --listen) listener ;;
 esac

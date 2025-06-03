@@ -4,6 +4,7 @@
 
 $text: #cdd6f4;
 $subtext0: #a6adc8;
+$backcolor: rgba($background, 0.7);
 
 * {
   all: unset;
@@ -39,7 +40,7 @@ slider {
     padding: 7px;
     border-radius: 10px;
     border: 1px solid rgba($foreground, 0.2);
-    background-color: rgba($background, 0.8);
+    background-color: $backcolor;
 
     .notification-content {
       margin: 5px;
@@ -85,8 +86,8 @@ slider {
       border: 1px solid rgba($color13, 0.1);
       background-image: linear-gradient(
         135deg,
-        rgba($color13, 0.3) -200%,
-        rgba($background, 0.5) 70%
+        rgba($color13, 0.7) -200%,
+        $backcolor 70%
       );
     }
   }
@@ -113,7 +114,7 @@ slider {
 .control-center {
   border-radius: 10px;
   margin: 0px;
-  background-color: rgba($background, 0.5);
+  background-color: $backcolor;
   color: $text;
   padding: 10px;
   border: 1px solid rgba($foreground, 0.2);

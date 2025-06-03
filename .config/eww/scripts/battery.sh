@@ -35,7 +35,7 @@ get_icon () {
   # Update eww on every time function calls
   eww update bat_chr="$(get_charge)"
   eww update bat_cap="$(capacity)"
-
+  
   if [[ "$(is_battery_available)" == "1" ]]; then
     if [[ "$(is_plugged)" == "1" ]]; then
       echo "󰂄"
@@ -43,21 +43,21 @@ get_icon () {
       cap=$(capacity)
       if [[ "$cap" -le "10" ]]; then
         echo "󰁺"
-      elif [[ "$cap" -le "20" ]]; then
+        elif [[ "$cap" -le "20" ]]; then
         echo "󰁻"
-      elif [[ "$cap" -le "30" ]]; then
+        elif [[ "$cap" -le "30" ]]; then
         echo "󰁼"
-      elif [[ "$cap" -le "40" ]]; then
+        elif [[ "$cap" -le "40" ]]; then
         echo "󰁽"
-      elif [[ "$cap" -le "50" ]]; then
+        elif [[ "$cap" -le "50" ]]; then
         echo "󰁾"
-      elif [[ "$cap" -le "60" ]]; then
+        elif [[ "$cap" -le "60" ]]; then
         echo "󰁿"
-      elif [[ "$cap" -le "70" ]]; then
+        elif [[ "$cap" -le "70" ]]; then
         echo "󰂀"
-      elif [[ "$cap" -le "80" ]]; then
+        elif [[ "$cap" -le "80" ]]; then
         echo "󰂁"
-      elif [[ "$cap" -le "90" ]]; then
+        elif [[ "$cap" -le "90" ]]; then
         echo "󰂂"
       else
         echo "󰁹"

@@ -159,10 +159,10 @@
     
     (_seperator :hide false)
     
-    (_pmenu_item :onclick "" :label "Suspend" :icon "󰒲")
-    (_pmenu_item :onclick "reboot" :label "Restart" :icon "󰜉")
-    (_pmenu_item :onclick "" :label "Hybernate" :icon "󰤁")
-    (_pmenu_item :onclick "shutdown now" :label "Shutdown" :icon "󰐥")
+    (_pmenu_item :onclick "systemctl suspend" :label "Suspend" :icon "󰒲")
+    (_pmenu_item :onclick "systemctl reboot" :label "Restart" :icon "󰜉")
+    (_pmenu_item :onclick "systemctl hibernate" :label "Hibernate" :icon "󰤁")
+    (_pmenu_item :onclick "systemctl poweroff" :label "Shutdown" :icon "󰐥")
     
   )
 )

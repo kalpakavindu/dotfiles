@@ -9,29 +9,29 @@ MAX_BRIGHTNESS=$(cat "$BRIGHTNESS_DIR/max_brightness")
 get_brightness () {
   b=$(cat "$BRIGHTNESS_PATH")
   bp=$(echo "$b * 100 / $MAX_BRIGHTNESS" | bc -l | awk '{printf "%.0f", $1}')
-
+  
   if [[ "$bp" -le "10" ]]; then
     echo "󰛩"
-  elif [[ "$bp" -le "20" ]]; then
+    elif [[ "$bp" -le "20" ]]; then
     echo "󱩎"
-  elif [[ "$bp" -le "30" ]]; then
+    elif [[ "$bp" -le "30" ]]; then
     echo "󱩏"
-  elif [[ "$bp" -le "40" ]]; then
+    elif [[ "$bp" -le "40" ]]; then
     echo "󱩑"
-  elif [[ "$bp" -le "50" ]]; then
+    elif [[ "$bp" -le "50" ]]; then
     echo "󱩑"
-  elif [[ "$bp" -le "60" ]]; then
+    elif [[ "$bp" -le "60" ]]; then
     echo "󱩒"
-  elif [[ "$bp" -le "70" ]]; then
+    elif [[ "$bp" -le "70" ]]; then
     echo "󱩓"
-  elif [[ "$bp" -le "80" ]]; then
+    elif [[ "$bp" -le "80" ]]; then
     echo "󱩔"
-  elif [[ "$bp" -le "90" ]]; then
+    elif [[ "$bp" -le "90" ]]; then
     echo "󱩕"
   else
     echo "󰛨"
   fi
-
+  
   eww update back_lev="$bp"
 }
 
