@@ -330,12 +330,6 @@ slider {
   }
 }
 
-.power-buttons button:hover,
-.powermode-buttons button:hover,
-.screenshot-buttons button:hover {
-  background: rgba($foreground, 0.1);
-}
-
 .widget-buttons-grid {
   padding-top: 1rem;
 
@@ -363,6 +357,10 @@ slider {
       label {
         color: $background;
       }
+    }
+
+    &:hover {
+      background: rgba($foreground, 0.1);
     }
   }
 }

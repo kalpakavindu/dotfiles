@@ -1,4 +1,4 @@
-@import url("/home/kalpakavindu/.cache/wal/colors-waybar.css");
+@import "/home/kalpakavindu/.cache/wal/colors.scss";
 
 * {
   border: none;
@@ -8,7 +8,7 @@
 
 window {
   font-size: 14px;
-  font-family: "JetBrainsMono Nerd Font";
+  font-family: "Ubuntu Nerd Font";
   background-color: transparent;
   border-radius: 10px;
   opacity: 1;
@@ -17,17 +17,17 @@ window {
 #outer-box {
   margin: 0;
   padding: 0px 0px 10px 0px;
-  background-color: @background;
+  background-color: rgba($background, 0.7);
   opacity: 1;
   border-radius: 10px;
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba($foreground, 0.1);
   border-width: 1px;
   border-style: solid;
 }
 
 #inner-box {
   margin: 5px;
-  background-color: @background;
+  background-color: transparent;
   opacity: 1;
   border-radius: 10px;
 }
@@ -35,22 +35,22 @@ window {
 #entry {
   padding: 5px 10px;
   border-radius: 5px;
-}
 
-#entry #text {
-  padding: 0px 0px 0px 10px;
-  font-weight: normal;
-  color: @color7;
-}
+  #text {
+    padding: 0px 0px 0px 10px;
+    font-weight: normal;
+    color: $color7;
+  }
 
-#entry:selected {
-  background-color: @color4;
-}
+  &:selected {
+    background-color: rgba($color4, 0.8);
 
-#entry:selected #text {
-  padding: 0px 0px 0px 10px;
-  font-weight: normal;
-  color: @color0;
+    #text {
+      padding: 0px 0px 0px 10px;
+      font-weight: normal;
+      color: $color0;
+    }
+  }
 }
 
 #input {

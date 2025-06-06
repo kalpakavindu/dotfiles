@@ -1,7 +1,7 @@
 mode=drun
 allow_images=true
 image_size=20
-prompt= Search apps
+prompt= Type here
 columns=1
 width=480
 height=330
