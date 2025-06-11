@@ -67,7 +67,7 @@
         {
           "label": "󰹑",
           "description": "Screenshot",
-          "command": ""
+          "command": "swaync-client -cp && hyprshot -m region"
         },
         {
           "label": "",

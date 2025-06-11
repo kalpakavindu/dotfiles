@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Written by KalpaKavindu <kalpadevonline@gmail.com>
+
+export HYPRLAND_TRACE=1
+export HYPRLAND_CONFIG="$HOME/.config/hypr/hyprland.conf"
+
+# export AQ_TRACE=1

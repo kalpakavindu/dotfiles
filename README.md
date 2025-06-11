@@ -20,8 +20,9 @@ My Linux configuration files.
   - swayidle
   - swaylock
   - cliphist
+  - hyprshot<sup>AUR</sup>
 
-- eww<sup>AUR</sup>
+- eww-git<sup>AUR</sup>
 
   - rustup
   - gtk3
@@ -54,15 +55,16 @@ My Linux configuration files.
 
 ## Softwares
 
-### visual-studio-code-bin<sup>AUR</sup>
+- visual-studio-code-bin<sup>AUR</sup>
 
-#### Depedancies
+  - libsecret
+  - trash-cli
 
-- libsecret
-- trash-cli
+- zsh
 
-### zsh
+  - zsh-autosuggestions
 
-#### Depedancies
+- nautilus
 
-- zsh-autosuggestions
+  - python-gobject
+  - nautilus-python

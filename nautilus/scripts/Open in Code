@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Written by KalpaKavindu <kalpadevonline@gmail.com>
+
+NAUTILUS_SCRIPT_SELECTED_FILE_PATHS="$1"
+
+if [ -z "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" ]; then
+  echo "No files selected."
+  exit 1
+fi
+
+code -n "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS"

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Written by KalpaKavindu <kalpadevonline@gmail.com>
+
+export XCURSOR_SIZE=20
+export HYPRCURSOR_SIZE=20
+
+export XDG_CURRENT_DESKTOP="Hyprland"
+export XDG_SESSION_DESKTOP="Hyprland"
+export XDG_SESSION_TYPE="wayland"
+
+export SDL_VIDEODRIVER="wayland"
+export CLUTTER_BACKEND="wayland"
+
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+export ELECTRON_OZONE_PLATFORM_HINT="x11"
+export ELECTRON_TRASH="trash-cli code"
