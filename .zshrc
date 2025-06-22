@@ -74,4 +74,8 @@ update_prompt
 
 RPROMPT="${return_code}"
 
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias list-wifi='nmcli -f "IN-USE,BARS,RATE,SECURITY,SSID" dev wifi'
+
 source ${ZSH}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
