@@ -57,30 +57,7 @@
       "image-radius": 12
     },
     "buttons-grid": {
-      "actions": [
-        {
-          "label": "󱋼",
-          "command": "",
-          "description": "Loacation",
-          "type": "toggle"
-        },
-        {
-          "label": "󰹑",
-          "description": "Screenshot",
-          "command": "swaync-client -cp && hyprshot -m region"
-        },
-        {
-          "label": "",
-          "description": "Screen record",
-          "command": ""
-        },
-        {
-          "label": "󰖂",
-          "description": "VPN",
-          "command": "",
-          "type": "toggle"
-        }
-      ]
+      "actions": []
     }
   }
 }
