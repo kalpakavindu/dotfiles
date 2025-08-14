@@ -1,70 +1,31 @@
-# Kalpa's dotfiles
+# Run ID
+The ID must be unique for every shipment.
 
-My Linux configuration files.
+| LK | 00023 |
+| -------- | -------- |
+| Country code (2-digits) | Run number |
 
-**Warning**: Use this files carefully with your own risk.
+For example, `LK00023` id is given to the 23rd shipment origin from Sri Lanka.
 
-## Dependancies
+# Shipper ID
+The ID must be unique for every shipper.
 
-- hyprland
+| SHP | A | 001 |
+| -------- | -------- | -------- |
+| Prefix | Shipper type | Number of the shipper |
 
-  - uwsm
-  - xdg-desktop-portal
-  - xdg-desktop-portal-wlr
-  - xdg-desktop-portal-hyprland
-  - xdg-desktop-portal-gtk
-  - polkit-kde-agent
-  - hyprpaper
-  - hypridle
-  - hyprpolkitagent
-  - swayidle
-  - swaylock
-  - cliphist
-  - hyprshot<sup>AUR</sup>
+For direct shippers, Shipper type is not specified and Number of the shipper is 4-digit number.
 
-- eww-git<sup>AUR</sup>
+For example, agent id `SHPA001` is given to the first shipping agent and `SHP0001` is given to the first direct shipper.
 
-  - rustup
-  - gtk3
-  - gtk-layer-shell
-  - pango
-  - gdk-pixbuf2
-  - libdbusmenu-gtk3
-  - cairo
-  - glib2
-  - gcc-libs
-  - glibc
-  - ttf-jetbrains-mono-nerd
-  - alsa-utils
+# Invoice ID
 
-- alacritty
-- htop
-- swaync
-- wofi
-- brightnessctl
-- pamixer
-- playerctl
-- NetworkManager
-- socat
-- py-wall
-- bc
-- gawk
-- grep
-- sassc
-- inotify-tools
+The ID must be unique for every invoice.
 
-## Softwares
+| IN | S | 00023 | A | 001 | 0001 |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| Prefix | Country of the shipment |Number of the run | Shipper type | Number of the shipper | Number of the invoice |
 
-- visual-studio-code-bin<sup>AUR</sup>
-
-  - libsecret
-  - trash-cli
-
-- zsh
-
-  - zsh-autosuggestions
-
-- nautilus
-
-  - python-gobject
-  - nautilus-python
+For example, `INS00023A0010001` id is given to the invoice of,
+- Run number `LK00023`
+- Shipper `SHPA001`
