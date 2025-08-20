@@ -1,31 +1,75 @@
-# Run ID
-The ID must be unique for every shipment.
+# Kalpa's dotfiles
 
-| LK | 00023 |
-| -------- | -------- |
-| Country code (2-digits) | Run number |
+My Linux configuration files.
 
-For example, `LK00023` id is given to the 23rd shipment origin from Sri Lanka.
+> **Warning**: Use this files carefully with your own risk.
 
-# Shipper ID
-The ID must be unique for every shipper.
+## Dependancies
 
-| SHP | A | 001 |
-| -------- | -------- | -------- |
-| Prefix | Shipper type | Number of the shipper |
+- `hyprland`
 
-For direct shippers, Shipper type is not specified and Number of the shipper is 4-digit number.
+  - `uwsm`
+  - `xdg-desktop-portal`
+  - `xdg-desktop-portal-wlr`
+  - `xdg-desktop-portal-hyprland`
+  - `xdg-desktop-portal-gtk`
+  - `polkit-kde-agent`
+  - `hyprpaper`
+  - `hypridle`
+  - `hyprpolkitagent`
+  - `swayidle`
+  - `swaylock`
+  - `cliphist`
+  - `hyprshot`<sup><b>AUR</b></sup>
 
-For example, agent id `SHPA001` is given to the first shipping agent and `SHP0001` is given to the first direct shipper.
+- `eww-git`<sup><b>AUR</b></sup>
+  - `rustup`
+  - `gtk3`
+  - `gtk-layer-shell`
+  - `pango`
+  - `gdk-pixbuf2`
+  - `libdbusmenu-gtk3`
+  - `cairo`
+  - `glib2`
+  - `gcc-libs`
+  - `glibc`
+  - `ttf-ubuntu-nerd`
+  - `alsa-utils`
+- `alacritty`
+  - `ttf-jetbrains-mono-nerd`
+- `htop`
+- `swaync`
+- `wofi`
+- `brightnessctl`
+- `pamixer`
+- `playerctl`
+- `NetworkManager`
+- `socat`
+- `py-wall`
+- `bc`
+- `gawk`
+- `grep`
+- `sassc`
+- `inotify-tools`
 
-# Invoice ID
+## Softwares
 
-The ID must be unique for every invoice.
-
-| IN | S | 00023 | A | 001 | 0001 |
-| -------- | -------- | -------- | -------- | -------- | -------- |
-| Prefix | Country of the shipment |Number of the run | Shipper type | Number of the shipper | Number of the invoice |
-
-For example, `INS00023A0010001` id is given to the invoice of,
-- Run number `LK00023`
-- Shipper `SHPA001`
+- `visual-studio-code-bin`<sup><b>AUR</b></sup>
+  - `libsecret`
+  - `trash-cli`
+- `zsh`
+  - `zsh-autosuggestions`
+- `nautilus`
+  - `python-gobject`
+  - `nautilus-python`
+- `easy-effects`
+  - `linuxstudio-plugins` - Provides a range of audio effects.
+  - `calf-plugins` - Another set of audio processing plugins.
+  - `libebur128` - For auto gain and level metering.
+  - `zam-plugins` - For Maximizer.
+  - `zita-convolver` - For Convolver.
+  - `lv2-plugins` - For Bass loudness.
+  - `speexdsp` - For Speech processor.
+  - `soundtouch` - For Pitch shift.
+  - `rnnoise` - For Noise reduction.
+  - `deepfilternet-git`<sup><b>AUR</b></sup> - For Deep noise remover.
