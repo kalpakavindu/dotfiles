@@ -1,7 +1,7 @@
 ; Written by KalpaKavindu <kalpadevonline@gmail.com>
 
 ; Variables
-(defvar systray_open false)
+(defvar systray_open true) ; This is my prefference. Set default to false.
 (defvar vol_lev "0")
 (defvar vol_muted "false")
 (defvar vol_dev "Sound Output")

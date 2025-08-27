@@ -12,7 +12,8 @@ else
   sassc $XDG_CONFIG_HOME/swaync/style.scss $SWAYNC_CACHE_DIR/style.css
 fi
 
-# export GTK_DEBUG="interactive" # To open inspector
+# Uncommenting following line will open inspector
+# export GTK_DEBUG="interactive"
 
 killall swaync
 uwsm app -- swaync -s "$SWAYNC_STYLE_FILE" -c "$SWAYNC_CONFIG_FILE" &

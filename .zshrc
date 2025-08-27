@@ -8,7 +8,7 @@ export ZSH="/usr/share/zsh"
 export LANG="en_US.UTF-8"
 export EDITOR="code"
 export TERMINAL="alacritty"
-export GDK_BACKEND="wayland"
+export GDK_BACKEND="wayland,x11"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
