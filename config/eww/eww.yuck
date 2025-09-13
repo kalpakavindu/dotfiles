@@ -247,6 +247,14 @@
       (box
         :orientation "h"
         :space-evenly false
+        :halign "start"
+        :hexpand true
+        (label :class "a_control_text" :halign "start" :text "Built-in Analog audio")
+      )
+      
+      (box
+        :orientation "h"
+        :space-evenly false
         :halign "end"
         :hexpand true
         (button

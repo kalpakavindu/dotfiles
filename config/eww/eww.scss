@@ -309,6 +309,10 @@ calendar:indeterminate {
     }
   }
 
+  .a_control_text {
+    color: $color6;
+  }
+
   .backlight {
     button {
       font-size: 18px;
@@ -417,6 +421,7 @@ calendar:indeterminate {
 
   .footer {
     margin-top: 10px;
+    color: $color5;
 
     .settings_btn {
       background-color: transparent;
