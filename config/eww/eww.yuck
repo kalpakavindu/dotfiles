@@ -9,6 +9,7 @@
 (defvar mic_lev "0")
 (defvar mic_muted "false")
 (defvar mic_dev "Sound Input")
+(defvar sound_server "Disabled")
 
 (defvar back_lev "0")
 (defvar eye_comf_on "false")
@@ -95,10 +96,10 @@
       :halign "center"
       :vexpand false
       :hexpand true
-      (label :class "control_text" :halign "start" :text "${device}")
+      (label :class "control_text" :limit-width 24 :halign "start" :tooltip "${device}" :text "${device}")
       (box
         :class "control_bar"
-        :halign "center"
+        :halign "start"
         :vexpand false
         :hexpand false
         (scale
@@ -249,7 +250,7 @@
         :space-evenly false
         :halign "start"
         :hexpand true
-        (label :class "a_control_text" :halign "start" :text "Built-in Analog audio")
+        (label :class "a_control_text" :limit-width 32 :halign "start" :text {sound_server})
       )
       
       (box

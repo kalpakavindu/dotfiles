@@ -79,6 +79,24 @@ mic_toggle() {
   fi
 }
 
+get_default_sink(){
+  d="$(pactl get-default-sink | cut -d '.' -f1)"
+  p="$(pactl get-default-sink | rev | cut -d '.' -f1 | rev)"
+  eww update vol_dev="$d | $p"
+}
+
+get_default_source(){
+  d="$(pactl get-default-source | cut -d '.' -f1)"
+  p="$(pactl get-default-source | rev | cut -d '.' -f1 | rev)"
+  eww update mic_dev="$d | $p"
+}
+
+get_default_server(){
+  s="$(pactl info | grep "Server Name")"
+  x="${s/Server Name: /}"
+  eww update sound_server="$x"
+}
+
 case $1 in
   --set-volume) vol_set "$2" ;;
   --toggle-volume) vol_toggle ;;
@@ -90,11 +108,17 @@ if [[ "$1" == "--listen-volume" ]]; then
   vol_get
   vol_icon
   vol_muted
+  get_default_server
+  get_default_sink
+  get_default_source
   
   alsactl monitor | while read -r _; do
     vol_get
     vol_icon
     vol_muted
+    get_default_server
+    get_default_sink
+    get_default_source
   done
 fi
 
@@ -102,10 +126,16 @@ if [[ "$1" == "--listen-mic" ]]; then
   mic_get
   mic_icon
   mic_muted
+  get_default_server
+  get_default_sink
+  get_default_source
   
   alsactl monitor | while read -r _; do
     mic_get
     mic_icon
     mic_muted
+    get_default_server
+    get_default_sink
+    get_default_source
   done
 fi
