@@ -52,6 +52,19 @@ $subtext0: #a6adc8;
     margin: 5px;
     background-color: transparent;
 
+    .image {
+      min-width: 48px;
+      min-height: 48px;
+      border-radius: 7px;
+      margin-right: 7px;
+      transform-origin: top;
+    }
+
+    .app-icon {
+      margin-bottom: -2px;
+      margin-right: 5px;
+    }
+
     .summary {
       color: $text;
       margin-bottom: 5px;
@@ -89,17 +102,6 @@ $subtext0: #a6adc8;
 
   .notification-default-action {
     .notification-content {
-      .image {
-        // Primary image
-        border-radius: 10px;
-        margin: 4px;
-      }
-
-      .app-icon {
-        // Notification app icon (only visible when the primary image is set)
-        margin: 6px;
-      }
-
       .text-box .time {
         font-size: 10px;
       }
