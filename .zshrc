@@ -79,3 +79,7 @@ alias grep='grep --color=auto'
 alias list-wifi='nmcli -f "IN-USE,BARS,RATE,SECURITY,SSID" dev wifi'
 
 source ${ZSH}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

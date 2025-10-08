@@ -43,8 +43,10 @@ set_brightness () {
 
 toggle_eye () {
   if [[ "$(eww get eye_comf_on)" == "false" ]]; then
+    hyprctl hyprsunset temperature $1
     eww update eye_comf_on="true"
   else
+    hyprctl hyprsunset identity
     eww update eye_comf_on="false"
   fi
 }
@@ -58,5 +60,5 @@ fi
 
 case $1 in
   --set) set_brightness "$2" ;;
-  --toggle-eye) toggle_eye ;;
+  --toggle-eye) toggle_eye "$2" ;;
 esac

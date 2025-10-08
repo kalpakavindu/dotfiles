@@ -14,6 +14,7 @@
 (defvar back_lev "0")
 (defvar eye_comf_on "false")
 (defvar back_dev "Brightness")
+(defvar eye_comf_temp 5500)
 
 (defvar bat_chr "0")
 (defvar bat_chr_def "0")
@@ -295,7 +296,7 @@
     (_bar_control
       :class "back"
       :active "${eye_comf_on == 'true'}"
-      :onbtnclick "scripts/backlight.sh --toggle-eye"
+      :onbtnclick "scripts/backlight.sh --toggle-eye 5500"
       :onprochange "scripts/backlight.sh --set {}"
       :device {back_dev}
       :level {back_lev}
