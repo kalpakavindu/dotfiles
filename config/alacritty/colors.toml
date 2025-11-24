@@ -51,5 +51,5 @@ background = "0x1a1b26"
 foreground = "0xc0caf5"
 
 [colors.selection]
-background = "0xdc3232"
-text = "0xffffff"
+background = "0x575875"
+text = "0xc0caf5"

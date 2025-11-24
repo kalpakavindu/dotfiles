@@ -2,6 +2,7 @@ general.import = [
   # "/home/kalpakavindu/.cache/wal/colors-alacritty.toml",
   "/home/kalpakavindu/.config/alacritty/colors.toml",
   "/home/kalpakavindu/.config/alacritty/fonts.toml",
+  "/home/kalpakavindu/.config/alacritty/bindings.toml",
 ]
 
 [cursor]
@@ -12,14 +13,9 @@ unfocused_hollow = true
 shape = "beam"
 blinking = "off"
 
-[[keyboard.bindings]]
-action = "SpawnNewInstance"
-key = "N"
-mods = "Control"
-
 [scrolling]
 history = 10000
-multiplier = 3
+multiplier = 5
 
 [window]
 decorations = "full"

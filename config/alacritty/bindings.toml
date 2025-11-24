@@ -1,0 +1,143 @@
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Control"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "F11"
+mods = "None"
+action = "ToggleFullscreen"
+
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "Shift"
+action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "Shift"
+action = "ScrollPageDown"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+action = "ScrollToTop"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+action = "ScrollToBottom"
+
+[[keyboard.bindings]]
+key = "Space"
+mods = "Shift|Control"
+action = "ToggleViMode"
+
+[[keyboard.bindings]]
+key = "Escape"
+mods = "None"
+action = "ClearSelection"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "None"
+action = "First"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "None"
+action = "Last"
+
+# Search mode
+
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "None"
+mode = "Vi|~Search"
+action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "None"
+mode = "Vi|~Search"
+action = "ScrollPageDown"
+
+[[keyboard.bindings]]
+key = "Y"
+mods = "None"
+mode = "Vi|~Search"
+action = "ToggleNormalSelection"
+
+[[keyboard.bindings]]
+key = "ArrowUp"
+mods = "None"
+mode = "Vi|~Search"
+action = "Up"
+
+[[keyboard.bindings]]
+key = "ArrowDown"
+mods = "None"
+mode = "Vi|~Search"
+action = "Down"
+
+[[keyboard.bindings]]
+key = "ArrowLeft"
+mods = "None"
+mode = "Vi|~Search"
+action = "Left"
+
+[[keyboard.bindings]]
+key = "ArrowRight"
+mods = "None"
+mode = "Vi|~Search"
+action = "Right"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "None"
+mode = "Vi|~Search"
+action = "First"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "None"
+mode = "Vi|~Search"
+action = "Last"
+
+[[keyboard.bindings]]
+key = "ArrowLeft"
+mods = "Shift"
+mode = "Vi|~Search"
+action = "WordLeft"
+
+[[keyboard.bindings]]
+key = "ArrowRight"
+mods = "Shift"
+mode = "Vi|~Search"
+action = "WordRight"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control"
+mode = "Vi|~Search"
+action = "Copy"
