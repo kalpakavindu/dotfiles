@@ -1,7 +1,7 @@
 # Setting up ZSH
 
 Ensure Installed:
-- `zsh`
+- **`zsh`**
 - `zsh-autosuggestions`
 
 ## Setup

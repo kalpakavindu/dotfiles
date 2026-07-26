@@ -1,12 +1,12 @@
 # Setting up Windows Terminal
 
 Ensure installed:
-- `Windows Terminal`
+- **`Windows Terminal`**
 - `MSYS2`
 - `Git Bash`
 - `JetBrains Mono Nerd Font`
 
-# Setup
+## Setup
 
 Copy `./settings.json` to the Windows Terminal Configuration Path.
 In my case here: `~\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`
