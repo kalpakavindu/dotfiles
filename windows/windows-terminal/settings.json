@@ -1,0 +1,272 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{5f15ebc1-a88a-4c76-9f96-ff56e2f9eec6}",
+    "initialCols": 100,
+    "initialRows": 24,
+    "keybindings": 
+    [
+        {
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+shift+c"
+        },
+        {
+            "id": "Terminal.PasteFromClipboard",
+            "keys": "ctrl+shift+v"
+        },
+        {
+            "id": "Terminal.DuplicatePaneAuto",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "icon": null,
+            "profile": "{5f15ebc1-a88a-4c76-9f96-ff56e2f9eec6}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "type": "profile"
+        },
+        {
+            "type": "separator"
+        },
+        {
+            "icon": null,
+            "profile": "{6534a636-b61a-423d-abb3-6fca726a0a72}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{8c1b0731-789f-4181-a95d-2acc6daf316b}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{71160544-14d8-4194-af25-d05feeac7233}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{90bc4e25-b111-4797-a8ea-d44a07b0a3d8}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{690be213-0143-4168-8641-643eb9aec02d}",
+            "type": "profile"
+        },
+        {
+            "type": "separator"
+        },
+        {
+            "icon": null,
+            "profile": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{baa17d83-fe7e-577b-a645-9ccef1a61240}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{401606e5-e73b-5cd0-a6b3-c9a5f4d8de48}",
+            "type": "profile"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "bellStyle": "audible",
+            "closeOnExit": "graceful",
+            "colorScheme": "Tokyo Night",
+            "font": 
+            {
+                "face": "JetBrainsMonoNL Nerd Font Mono",
+                "size": 12
+            },
+            "opacity": 80,
+            "pathTranslationStyle": "none",
+            "useAcrylic": true
+        },
+        "list": 
+        [
+            {
+                "altGrAliasing": true,
+                "antialiasingMode": "grayscale",
+                "closeOnExit": "automatic",
+                "commandline": "C:\\DevApps\\powershell\\7\\pwsh.exe",
+                "cursorShape": "bar",
+                "guid": "{5f15ebc1-a88a-4c76-9f96-ff56e2f9eec6}",
+                "hidden": false,
+                "historySize": 9001,
+                "icon": "C:\\DevApps\\powershell\\7\\assets\\Powershell_black.ico",
+                "name": "PowerShell",
+                "padding": "8, 8, 8, 8",
+                "snapOnInput": true,
+                "startingDirectory": "D:\\src\\"
+            },
+            {
+                "colorScheme": "Campbell",
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "font": 
+                {
+                    "face": "Cascadia Mono"
+                },
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt",
+                "opacity": 100
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "colorScheme": "Tokyo Night",
+                "guid": "{401606e5-e73b-5cd0-a6b3-c9a5f4d8de48}",
+                "hidden": false,
+                "name": "Arch Linux",
+                "pathTranslationStyle": "wsl",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "commandline": "C:\\DevApps\\msys2\\msys2_shell.cmd -defterm -here -no-start -mingw64",
+                "guid": "{6534a636-b61a-423d-abb3-6fca726a0a72}",
+                "hidden": false,
+                "icon": "C:\\DevApps\\msys2\\mingw64.ico",
+                "name": "MSYS2 MINGW64",
+                "pathTranslationStyle": "msys2",
+                "startingDirectory": "C:\\DevApps\\msys2\\home\\%USERNAME%"
+            },
+            {
+                "commandline": "C:\\DevApps\\msys2\\msys2_shell.cmd -defterm -here -no-start -mingw32",
+                "guid": "{8c1b0731-789f-4181-a95d-2acc6daf316b}",
+                "hidden": false,
+                "icon": "C:\\DevApps\\msys2\\mingw32.ico",
+                "name": "MSYS2 MINGW32",
+                "pathTranslationStyle": "msys2",
+                "startingDirectory": "C:\\DevApps\\msys2\\home\\%USERNAME%"
+            },
+            {
+                "commandline": "C:\\DevApps\\msys2\\msys2_shell.cmd -defterm -here -no-start -ucrt64",
+                "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+                "icon": "C:\\DevApps\\msys2\\ucrt64.ico",
+                "name": "MSYS2 UCRT64",
+                "pathTranslationStyle": "msys2",
+                "startingDirectory": "C:\\DevApps\\msys2\\home\\%USERNAME%"
+            },
+            {
+                "commandline": "C:\\DevApps\\msys2\\msys2_shell.cmd -defterm -here -no-start -msys",
+                "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
+                "icon": "C:\\DevApps\\msys2\\msys2.ico",
+                "name": "MSYS2 MSYS",
+                "pathTranslationStyle": "msys2",
+                "startingDirectory": "C:\\DevApps\\msys2\\home\\%USERNAME%"
+            },
+            {
+                "commandline": "C:\\DevApps\\msys2\\msys2_shell.cmd -defterm -here -no-start -clang64",
+                "guid": "{90bc4e25-b111-4797-a8ea-d44a07b0a3d8}",
+                "hidden": false,
+                "icon": "C:\\DevApps\\msys2\\clang64.ico",
+                "name": "MSYS2 CLANG64",
+                "pathTranslationStyle": "msys2",
+                "startingDirectory": "C:\\DevApps\\msys2\\home\\%USERNAME%"
+            },
+            {
+                "commandline": "C:\\DevApps\\msys2\\msys2_shell.cmd -defterm -here -no-start -clangarm64",
+                "guid": "{690be213-0143-4168-8641-643eb9aec02d}",
+                "hidden": false,
+                "icon": "C:\\DevApps\\msys2\\clangarm64.ico",
+                "name": "MSYS2 CLANGARM64",
+                "pathTranslationStyle": "msys2",
+                "startingDirectory": "C:\\DevApps\\msys2\\home\\%USERNAME%"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "pathTranslationStyle": "mingw",
+                "source": "Git"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#1A1B2C",
+            "black": "#414868",
+            "blue": "#7AA2F7",
+            "brightBlack": "#414868",
+            "brightBlue": "#7AA2F7",
+            "brightCyan": "#7DCFFF",
+            "brightGreen": "#73DACA",
+            "brightPurple": "#BB9AF7",
+            "brightRed": "#F7768E",
+            "brightWhite": "#C0CAF5",
+            "brightYellow": "#E0AF68",
+            "cursorColor": "#C0CAF5",
+            "cyan": "#7DCFFF",
+            "foreground": "#A9B1DC",
+            "green": "#73DACA",
+            "name": "Tokyo Night",
+            "purple": "#BB9AF7",
+            "red": "#F7768E",
+            "selectionBackground": "#28344A",
+            "white": "#C0CAF5",
+            "yellow": "#E0AF68"
+        },
+        {
+            "background": "#2C001E",
+            "black": "#292929",
+            "blue": "#3465A4",
+            "brightBlack": "#555753",
+            "brightBlue": "#729FCF",
+            "brightCyan": "#34E2E2",
+            "brightGreen": "#8AE234",
+            "brightPurple": "#AD7FA8",
+            "brightRed": "#EF2929",
+            "brightWhite": "#EEEEEE",
+            "brightYellow": "#FCE94F",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#06989A",
+            "foreground": "#EEEEEE",
+            "green": "#32BA00",
+            "name": "Ubuntu",
+            "purple": "#75507B",
+            "red": "#CC0000",
+            "selectionBackground": "#FFFFFF",
+            "white": "#D3D7CF",
+            "yellow": "#C4A000"
+        }
+    ],
+    "themes": [],
+    "useAcrylicInTabRow": false
+}

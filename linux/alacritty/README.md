@@ -2,6 +2,7 @@
 
 Ensure installed:
 - `alacritty`
+- `ttf-jetbrains-mono-nerd-font`
 
 ## Setup
 

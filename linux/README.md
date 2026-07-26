@@ -1,8 +1,14 @@
-# Kalpa's dotfiles
+# Linux Configuration Files
 
-My Linux configuration files.
+My configurations on Linux.
 
-> **Warning**: Use this files carefully with your own risk.
+System info:
+```
+OS: 
+Kernel: 
+Shell: zsh
+Locale: en_US.UTF-8
+```
 
 ## Gnome Keyring
 Install `gnome-keyring`, `libsecret` and `seahorse`.
