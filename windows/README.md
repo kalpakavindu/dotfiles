@@ -10,3 +10,4 @@ Shell: PowerShell 7.6.3
 Locale: en_US.UTF-8
 ```
 
+You must keep these files in Windows Drive for make HardLinks there. For folder Junctions this is not needed but for files bot source and the link must stay in the same drive.
