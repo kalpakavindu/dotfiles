@@ -1,0 +1,8 @@
+[wsl2]
+defaultVhdSize=107374182400
+networkingMode=Mirrored
+
+[experimental]
+autoMemoryReclaim=Gradual
+hostAddressLoopback=true
+sparseVhd=true
