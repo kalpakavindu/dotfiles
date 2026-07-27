@@ -52,6 +52,7 @@ busctl --user tree org.freedesktop.secrets
 - [`alacritty`](./alacritty/README.md)
 - [`easyeffects`](./easyeffects/README.md)
 - [`fastfetch`](./fastfetch/README.md)
+- [`htop`](./htop/README.md)
 
 ## Other configurations
 
