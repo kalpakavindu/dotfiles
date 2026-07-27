@@ -50,6 +50,8 @@ busctl --user tree org.freedesktop.secrets
 - [`nautilus`](./nautilus/README.md)
 - [`zsh`](./zsh/README.md)
 - [`alacritty`](./alacritty/README.md)
+- [`easyeffects`](./easyeffects/README.md)
+- [`fastfetch`](./fastfetch/README.md)
 
 ## Other configurations
 
