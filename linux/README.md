@@ -44,12 +44,29 @@ To verify keyring daemon integration run,
 busctl --user tree org.freedesktop.secrets
 ```
 
-## Pre configuration
-Install `less` for view pagers in other tools.
-
 ## Software
 
 - [`visual-studio-code-bin`<sup>AUR</sup>](./vscode/README.md)
 - [`nautilus`](./nautilus/README.md)
 - [`zsh`](./zsh/README.md)
 - [`alacritty`](./alacritty/README.md)
+
+## Other configurations
+
+### Hiding Windows Drive in File Managers
+I hide Windows Drive in my main hard drive through adding a new rule for `udev`. This prevents me from accidentally accessing it from portable drive which will maybe lead to data corruption from Windows side. To add the rule,
+
+```bash
+sudo nano /etc/udev/rules.d/99-hide-partitions.rules
+```
+then write this line by replacing `<UUID>` with the UUID of the Windows Drive,
+
+```txt
+ENV{ID_FS_UUID}=="<UUID>", ENV{UDISKS_IGNORE}="1"
+```
+
+Then save and reload the rules using this command.
+
+```bash
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
