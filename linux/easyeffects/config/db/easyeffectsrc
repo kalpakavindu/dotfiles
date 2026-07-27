@@ -1,0 +1,25 @@
+[Presets]
+lastLoadedOutputPreset=Wired Ear Phone
+
+[Spectrum]
+dynamicYScale=false
+height=250
+nPoints=200
+
+[StreamInputs]
+inputDevice=alsa_input.pci-0000_06_00.6.HiFi__Mic2__source
+visiblePage=pluginsPage
+
+[StreamOutputs]
+mostUsedPresets=Wired Ear Phone,Woofer WASAM F-2000
+outputDevice=alsa_output.pci-0000_06_00.6.HiFi__Headphones__sink
+plugins=equalizer#0,bass_enhancer#0,limiter#0
+usedPresets=Wired Ear Phone:6,Woofer WASAM F-2000:2
+visiblePage=pluginsPage
+visiblePlugin=equalizer#0
+
+[Window]
+autostartOnLogin=true
+height=1015
+noWindowAfterStarting=true
+width=1914
