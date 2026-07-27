@@ -4,11 +4,19 @@ My configurations on Linux.
 
 System info:
 ```
-OS: 
-Kernel: 
+OS: Arch Linux x86_64
+Kernel: Linux 7.1.4-arch1-1
 Shell: zsh
 Locale: en_US.UTF-8
 ```
+
+## Audio
+I configured audio with `pipewire`. Install these packages to get started.
+
+- `pipewire`
+- `pipewire-pulse`
+- `pipewire-alsa`
+- `wireplumber`
 
 ## Gnome Keyring
 Install `gnome-keyring`, `libsecret` and `seahorse`.

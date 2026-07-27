@@ -1,1 +1,5 @@
-windows-terminal/state.json
+windows-terminal/*
+
+!windows-terminal/settings.json
+!windows-terminal/README.md
+!windows-terminal/setup.ps1
