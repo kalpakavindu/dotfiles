@@ -3,6 +3,7 @@
 Ensure installed:
 - **`nautilus`**
 - `python`
+- `python-gobject`
 - `python-nautilus`
 - `alacritty`
 - `visual-studio-code-bin`<sup>AUR</sup>
@@ -24,8 +25,8 @@ nautilus -q
 
 Context menu for Directories
 
-![Directory context menu](../../assets/nautilus/directory-menu.png)
+![Directory context menu](../../assets/screenshots/nautilus-directory-menu.png)
 
 Context menu for Files
 
-![alt text](../../assets/nautilus/file-menu.png)
+![alt text](../../assets/screenshots/nautilus-file-menu.png)

@@ -10,6 +10,16 @@ Shell: zsh
 Locale: en_US.UTF-8
 ```
 
+## User Fonts
+Installation
+
+```bash
+sudo ln -s -n '/home/kalpakavindu/Source/dotfiles/assets/fonts' '/home/kalpakavindu/.local/share/fonts'
+
+# Refresh font cache
+fc-cache -vf
+```
+
 ## Audio
 I configured audio with `pipewire`. Install these packages to get started.
 
@@ -73,3 +83,16 @@ Then save and reload the rules using this command.
 ```bash
 sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
+
+### Tools
+Install these packages to make sure the scripts run perfectly in other tool configurations.
+
+- `gawk`
+- `bc`
+- `socat`
+- `pamixer`
+- `playerctl`
+- `grep`
+- `sassc`
+- `inotify-tools`
+- `trash-cli`

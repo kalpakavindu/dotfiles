@@ -11,3 +11,6 @@ Create a symlink for this folder to `~/fastfetch`.
 rm -rf '/home/kalpakavindu/fastfetch'
 sudo ln -s -n '/home/kalpakavindu/Source/dotfiles/linux/fastfetch' '/home/kalpakavindu/fastfetch'
 ```
+
+## Preview
+![alt text](../../assets/screenshots/fastfetch-output.png)

@@ -31,4 +31,4 @@ ln -sf '/home/kalpakavindu/Source/dotfiles/linux/zsh/.zprofile' '/root/.zprofile
 ```
 
 ## Preview
-![Prompt preview](../../assets/zsh/image.png)
+![alt text](../../assets/screenshots/zsh-promts.png)

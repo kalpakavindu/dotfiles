@@ -16,8 +16,8 @@ New-Item -Type SymbolicLink `
 
 Powershell prompt for normal users
 
-![alt text](../../assets/powershell/powershell-user.png)
+![alt text](../../assets/screenshots/powershell-prompt-user.png)
 
 Powershell prompt with Admin privileges
 
-![alt text](../../assets/powershell/powershell-admin.png)
+![alt text](../../assets/screenshots/powershell-prompt-admin.png)
