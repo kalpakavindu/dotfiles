@@ -2,3 +2,5 @@ __pycache__/
 
 easyeffects/config/db/*
 !easyeffects/config/db/easyeffectsrc
+
+configvvb/

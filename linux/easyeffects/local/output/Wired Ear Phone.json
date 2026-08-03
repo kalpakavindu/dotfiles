@@ -1,22 +1,22 @@
 {
     "output": {
         "bass_enhancer#0": {
-            "amount": 1.2,
-            "blend": 0.0,
+            "amount": 1.0,
+            "blend": -1.0,
             "bypass": false,
             "floor": 20.0,
             "floor-active": true,
             "harmonics": 2.0,
             "input-gain": 0.0,
             "output-gain": 0.0,
-            "scope": 160.0
+            "scope": 120.0
         },
         "blocklist": [],
         "equalizer#0": {
             "balance": 0.0,
             "bypass": false,
             "decramp": "x4",
-            "input-gain": -3.5,
+            "input-gain": -2.0,
             "left": {
                 "band0": {
                     "frequency": 68.0,

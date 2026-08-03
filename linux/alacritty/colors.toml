@@ -1,3 +1,6 @@
+# Written by KalpaKavindu <kalpadevonline@gmail.com>
+
+
 [[colors.indexed_colors]]
 color = "0xff9e64"
 index = 16
@@ -24,32 +27,32 @@ index = 21
 
 [colors.bright]
 black = "0x414868"
-blue = "0x7aa2f7"
-cyan = "0x7dcfff"
-green = "0x9ece6a"
-magenta = "0xbb9af7"
-red = "0xf7768e"
-white = "0xc0caf5"
-yellow = "0xe0af68"
+blue = "0x7AA2F7"
+cyan = "0x7DCFFF"
+green = "0x73DACA"
+magenta = "0xBB9AF7"
+red = "0xF7768E"
+white = "0xC0CAF5"
+yellow = "0xE0AF68"
 
 [colors.cursor]
-cursor = "CellForeground"
+cursor = "0xC0CAF5"
 text = "CellBackground"
 
 [colors.normal]
-black = "0x15161e"
-blue = "0x7aa2f7"
-cyan = "0x7dcfff"
-green = "0x9ece6a"
-magenta = "0xbb9af7"
-red = "0xf7768e"
-white = "0xa9b1d6"
-yellow = "0xe0af68"
+black = "0x414868"
+blue = "0x7AA2F7"
+cyan = "0x7DCFFF"
+green = "0x73DACA"
+magenta = "0xBB9AF7"
+red = "0xF7768E"
+white = "0xC0CAF5"
+yellow = "0xE0AF68"
 
 [colors.primary]
-background = "0x1a1b26"
-foreground = "0xc0caf5"
+background = "0x1A1B2C"
+foreground = "0xA9B1DC"
 
 [colors.selection]
-background = "0x575875"
+background = "0x28344A"
 text = "0xc0caf5"

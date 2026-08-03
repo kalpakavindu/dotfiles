@@ -9,7 +9,6 @@
     "uptime",
     "packages",
     "shell",
-    "display",
     "de",
     "wm",
     "theme",
@@ -22,4 +21,11 @@
     "break",
     "colors",
   ],
+  "logo": {
+    "source": "/home/kalpakavindu/Source/dotfiles/assets/ascii-art.txt",
+    "padding": {
+      "top": 1,
+      "right": 2
+    },
+  },
 }

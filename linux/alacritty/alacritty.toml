@@ -1,3 +1,5 @@
+# Written by KalpaKavindu <kalpadevonline@gmail.com>
+
 general.import = [
   # "/home/kalpakavindu/.cache/wal/colors-alacritty.toml",
   "/home/kalpakavindu/.config/alacritty/colors.toml",

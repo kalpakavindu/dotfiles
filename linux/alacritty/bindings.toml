@@ -1,3 +1,5 @@
+# Written by KalpaKavindu <kalpadevonline@gmail.com>
+
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
 key = "N"
@@ -11,16 +13,6 @@ action = "Copy"
 [[keyboard.bindings]]
 key = "V"
 mods = "Control|Shift"
-action = "Paste"
-
-[[keyboard.bindings]]
-key = "C"
-mods = "Control"
-action = "Copy"
-
-[[keyboard.bindings]]
-key = "V"
-mods = "Control"
 action = "Paste"
 
 [[keyboard.bindings]]

@@ -1,0 +1,669 @@
+/* Written by KalpaKavindu <kalpadevonline@gmail.com> */
+
+@import "/home/kalpakavindu/.config/hypr/colors/colors.scss";
+
+$popup-background: rgba($background, 0.7);
+
+* {
+  all: unset;
+  font-family: "Ubuntu Nerd Font";
+}
+
+.background {
+  background: transparent;
+  background-image: none;
+}
+
+progressbar trough {
+  background-color: rgba($foreground, 0.1);
+  border-radius: 10px;
+  min-width: 100px;
+}
+
+scale trough {
+  background-color: rgba($foreground, 0.1);
+  box-shadow: 0px 2px 3px 2px #06060b84;
+  border-radius: 10px;
+  min-height: 10px;
+  min-width: 100px;
+  margin: 0px 10px 0px 0px;
+}
+
+progressbar trough progress,
+scale trough highlight {
+  background-image: linear-gradient(
+    to right,
+    $foreground 30%,
+    $color4 100% * 50
+  );
+  border-radius: 10px;
+}
+
+tooltip.background {
+  background-color: rgba($background, 0.9);
+  border: 1px solid rgba($foreground, 0.1);
+  font-size: 14px;
+  border-radius: 10px;
+  color: $foreground;
+}
+
+tooltip label {
+  margin: 0 7px 3px 7px;
+}
+
+scrolledwindow contents trough {
+  background-color: rgba($foreground, 0.05);
+  border-radius: 10px;
+  min-width: 5px;
+  min-height: 100px;
+  opacity: 1;
+}
+
+scrolledwindow contents trough slider {
+  background-color: rgba($foreground, 0.2);
+  border-radius: 10px;
+  min-height: 50px;
+  min-width: 5px;
+}
+
+calender {
+  border-radius: 10px;
+  font-size: 12px;
+  color: rgba($color3, 0.6);
+}
+
+calendar:selected {
+  border-radius: 10px;
+  color: $background;
+  background-color: $color3;
+}
+
+calendar.header {
+  color: $color3;
+  font-weight: bold;
+}
+
+calendar.button {
+  color: $color3;
+}
+
+calendar.highlight {
+  color: rgba($color11, 0.5);
+}
+
+calendar:indeterminate {
+  color: rgba($color11, 0.2);
+}
+
+.seperator {
+  padding: 10px 0;
+  min-height: 11px;
+
+  .line {
+    min-height: 1px;
+    background-color: rgba($foreground, 0.2);
+  }
+}
+
+.tile {
+  background: transparent;
+  color: $color4;
+  font-size: 24px;
+  padding: 8px 0px;
+  border-radius: 10px;
+  border: 1px solid rgba($foreground, 0.1);
+  transition: background linear 300ms;
+
+  &:hover {
+    background-color: rgba($foreground, 0.05);
+  }
+
+  &.active {
+    color: $background;
+    background: linear-gradient(
+      45deg,
+      rgba($foreground, 0.6) 0%,
+      $color4 100% * 50
+    );
+  }
+}
+
+.bar_control {
+  .control_icon {
+    font-size: 16px;
+    margin-right: 24px;
+    padding: 5px 10px;
+    color: $color5;
+    background-color: transparent;
+    border: 1px solid rgba($color5, 0.2);
+    border-radius: 10px;
+    transition: background-color linear 300ms;
+
+    &:hover {
+      background-color: rgba($color5, 0.1);
+    }
+
+    &.active {
+      background-color: $color5;
+      color: $background;
+    }
+  }
+
+  .control_text {
+    font-size: 14px;
+    color: $color5;
+    margin-bottom: 3px;
+  }
+
+  .control_bar scale trough {
+    min-width: 200px;
+  }
+
+  .control_bar scale trough highlight {
+    background-image: linear-gradient(to right, $color5 30%, $color6 100% * 50);
+  }
+
+  .control_level {
+    color: $color6;
+  }
+}
+
+.taskbar {
+  margin: 0px 5px;
+
+  .appmenu {
+    background-color: $background;
+    border-radius: 10px;
+
+    button {
+      background-color: transparent;
+      color: $foreground;
+      padding: 0px 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      transition: background-color linear 300ms;
+    }
+  }
+
+  .tray {
+    background-color: $background;
+    border-radius: 10px;
+
+    .system_tray {
+      background-color: $background;
+      padding: 0 10px;
+      border-radius: 10px;
+
+      window menu {
+        font-size: 12px;
+        background-color: $background;
+        border-radius: 10px;
+        padding: 5px;
+
+        & > separator {
+          opacity: 1;
+          margin: 5px 10px;
+          min-height: 1px;
+          background-color: rgba($foreground, 0.1);
+        }
+
+        menuitem {
+          padding: 5px;
+          background-color: transparent;
+          border-radius: 5px;
+          transition: background-color linear 300ms;
+          color: rgba($foreground, 0.8);
+
+          arrow.right {
+            min-width: 2px;
+            min-height: 16px;
+            background-color: rgba($foreground, 0.8);
+          }
+
+          &:hover {
+            background-color: rgba($foreground, 0.05);
+          }
+
+          &:disabled {
+            color: rgba($color4, 0.7);
+          }
+        }
+      }
+    }
+
+    .revealer {
+      padding: 0 5px;
+      background-color: transparent;
+      border-radius: 10px;
+      font-size: 14px;
+      color: $color4;
+
+      &:hover {
+        background-color: rgba($foreground, 0.1);
+      }
+    }
+  }
+
+  .workspaces {
+    background-color: $background;
+    border-radius: 10px;
+
+    button {
+      background-color: transparent;
+      color: $color8;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      transition: background-color linear 300ms;
+
+      &.active {
+        color: $foreground;
+      }
+    }
+  }
+
+  .clock,
+  .battery,
+  .network {
+    background-color: $background;
+    border-radius: 10px;
+
+    .content {
+      background-color: transparent;
+      color: $color3;
+      border-radius: 10px;
+      padding: 0px 10px;
+      transition: background-color linear 300ms;
+
+      .icon {
+        font-size: 12px;
+      }
+
+      .text {
+        margin-left: 5px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+
+    &:hover {
+      .content {
+        background-color: rgba($foreground, 0.1);
+      }
+    }
+  }
+
+  .volume,
+  .backlight,
+  .notification {
+    background-color: $background;
+    border-radius: 10px;
+
+    button {
+      background-color: transparent;
+      color: $color5;
+      padding: 0px 10px;
+      font-size: 14px;
+      border-radius: 10px;
+      transition: background-color linear 300ms;
+    }
+  }
+
+  .a_control_text {
+    color: $color6;
+  }
+
+  .backlight {
+    button {
+      font-size: 18px;
+    }
+  }
+
+  .notification {
+    button {
+      color: $color11;
+      font-size: 18px;
+    }
+  }
+
+  .battery,
+  .network {
+    .content {
+      color: $color4;
+
+      .icon {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .battery {
+    .content {
+      .icon {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .clock {
+    .content {
+      .icon {
+        font-size: 16px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .appmenu button,
+  .workspaces button,
+  .volume button,
+  .backlight button {
+    &:hover {
+      background-color: rgba($foreground, 0.1);
+    }
+  }
+}
+
+.pmenu {
+  background-color: $popup-background;
+  border-radius: 10px;
+  border: 1px solid rgba($foreground, 0.1);
+  padding: 5px;
+
+  .seperator {
+    padding: 0 5px;
+
+    .line {
+      background-color: rgba($foreground, 0.2);
+    }
+  }
+
+  .menu_item {
+    background-color: transparent;
+    border-radius: 5px;
+    transition: background-color linear 300ms;
+
+    &:hover {
+      background-color: rgba($foreground, 0.1);
+    }
+
+    .wrapper {
+      padding: 4px 10px;
+
+      .icon {
+        font-size: 20px;
+        color: rgba($foreground, 0.8);
+      }
+
+      .text {
+        font-size: 14px;
+        color: rgba($foreground, 0.8);
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.calendar_wrapper {
+  border-radius: 10px;
+  background-color: $popup-background;
+  padding: 5px;
+  border: 1px solid rgba($color3, 0.1);
+}
+
+.network_control,
+.battery_control,
+.audio_control,
+.backlight_control {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: $popup-background;
+
+  .footer {
+    margin-top: 10px;
+    color: $color5;
+
+    .settings_btn {
+      background-color: transparent;
+      font-size: 16px;
+      padding: 5px 8px;
+      border-radius: 10px;
+      transition: background-color linear 300ms;
+      color: $color6;
+      border: 1px solid rgba($color6, 0.1);
+
+      &:hover {
+        background-color: rgba($foreground, 0.1);
+      }
+    }
+  }
+}
+
+.audio_control,
+.backlight_control,
+.network_control {
+  border: 1px solid rgba($color5, 0.3);
+
+  .seperator {
+    .line {
+      background-color: rgba($color5, 0.2);
+    }
+  }
+}
+
+.network_control,
+.battery_control {
+  border: 1px solid rgba($color4, 0.3);
+
+  .seperator {
+    .line {
+      background-color: rgba($color4, 0.2);
+    }
+  }
+
+  .profile_text {
+    font-size: 14px;
+    margin-bottom: 10px;
+
+    .title {
+      color: $color4;
+    }
+
+    .text {
+      margin-left: 10px;
+      color: $color7;
+    }
+  }
+
+  .footer {
+    .settings_btn {
+      color: $color7;
+      border: 1px solid rgba($color7, 0.1);
+
+      &:hover {
+        background-color: rgba($foreground, 0.05);
+      }
+    }
+
+    .charge,
+    .details {
+      color: $color4;
+
+      .icon {
+        font-size: 16px;
+        margin-right: 10px;
+      }
+
+      .sep {
+        padding: 0px 2.5px;
+      }
+    }
+  }
+}
+
+.network_control {
+  .shortcuts {
+    margin-top: 0px;
+  }
+
+  .enp_data,
+  .wifi_data {
+    .title {
+      margin-bottom: 10px;
+
+      label {
+        font-size: 14px;
+        color: $color4;
+        font-weight: 400;
+      }
+
+      button {
+        background-color: transparent;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: 1px solid rgba($foreground, 0.1);
+        color: $foreground;
+        transition: background-color linear 300ms;
+
+        * {
+          font-size: 20px;
+        }
+
+        &:hover {
+          background-color: rgba($foreground, 0.05);
+        }
+      }
+    }
+
+    .wifi_empty {
+      background-color: rgba($color4, 0.09);
+      border-radius: 10px;
+
+      label {
+        font-size: 16px;
+        color: rgba($color4, 0.5);
+      }
+    }
+
+    .enp_item,
+    .wifi_item {
+      background-color: rgba($background, 0.5);
+      border-radius: 10px;
+      border: 1px solid rgba($foreground, 0.1);
+      transition: background-color linear 300ms;
+
+      &:hover {
+        background-color: rgba($foreground, 0.05);
+      }
+
+      .enp_item_content,
+      .wifi_item_content {
+        padding: 10px;
+
+        .icon {
+          margin-right: 15px;
+
+          label {
+            font-size: 28px;
+            color: $color4;
+          }
+        }
+
+        .data_box {
+          .enp_cname,
+          .wifi_cname {
+            font-weight: 500;
+            color: $foreground;
+            font-size: 14px;
+          }
+
+          .enp_ifname,
+          .wifi_mac {
+            color: $color4;
+            font-size: 12px;
+          }
+        }
+
+        .wifi_rate {
+          color: $color4;
+          font-size: 10px;
+        }
+      }
+
+      &.active {
+        background: linear-gradient(
+          to right,
+          rgba($foreground, 0.6) 30%,
+          $color4 100% * 50
+        );
+
+        .enp_item_content,
+        .wifi_item_content {
+          .icon {
+            label {
+              color: $background;
+            }
+          }
+
+          .data_box {
+            .enp_cname,
+            .wifi_cname {
+              color: $background;
+            }
+
+            .enp_ifname,
+            .wifi_mac {
+              color: $background;
+            }
+          }
+
+          .wifi_rate {
+            color: $background;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    .details {
+      .interface {
+        .icon {
+          font-size: 12px;
+        }
+      }
+
+      .sep {
+        padding: 8px;
+      }
+
+      .net_data {
+        .icon {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.notifier {
+  border-radius: 10px;
+  background-color: $popup-background;
+  border: 1px solid rgba($color5, 0.2);
+  padding: 0 10px;
+
+  .icon {
+    font-size: 18px;
+    color: $color5;
+    margin-right: 5px;
+  }
+
+  progressbar trough progress {
+    background-image: linear-gradient(to right, $color5 30%, $color6 100% * 50);
+  }
+
+  .text {
+    min-width: 40px;
+    color: $color6;
+  }
+}

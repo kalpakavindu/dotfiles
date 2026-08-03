@@ -14,12 +14,12 @@ visiblePage=pluginsPage
 mostUsedPresets=Wired Ear Phone,Woofer WASAM F-2000
 outputDevice=alsa_output.pci-0000_06_00.6.HiFi__Headphones__sink
 plugins=equalizer#0,bass_enhancer#0,limiter#0
-usedPresets=Wired Ear Phone:6,Woofer WASAM F-2000:2
+usedPresets=Wired Ear Phone:12,Woofer WASAM F-2000:4
 visiblePage=pluginsPage
-visiblePlugin=equalizer#0
+visiblePlugin=bass_enhancer#0
 
 [Window]
 autostartOnLogin=true
-height=1015
+height=1029
 noWindowAfterStarting=true
-width=1914
+width=1908
