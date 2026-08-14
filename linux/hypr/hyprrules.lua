@@ -127,3 +127,12 @@ hl.window_rule({
     },
     float = true
 })
+
+
+-- VLC idle inhibit
+hl.window_rule({
+    match = {
+        class = "^(vlc)$"
+    },
+    idle_inhibit = "fullscreen"
+})

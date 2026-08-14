@@ -379,7 +379,7 @@
         :hexpand true
         :vexpand false
         :halign "start"
-        (label :text "󰉁" :class "icon")
+        (label :text "" :class "icon")
         (label :text "${bat_chr}%")
         (label :text "" :class "sep")
         (label :text "(${bat_chr_def}mAh)")
@@ -390,6 +390,7 @@
         :space-evenly false
         :halign "end"
         :hexpand true
+        :vexpand false
         (button
           :class "settings_btn"
           :onclick "pavucontrol &"
@@ -421,7 +422,7 @@
     :orientation "v"
     :space-evenly false
     :hexpand true
-    :vexpand false
+    :vexpand true
     
     (revealer
       :reveal "${net_enp_list != '[]'}"
@@ -614,7 +615,7 @@
       :class "footer"
       :orientation "h"
       :space-evenly false
-      :vexpand true
+      :vexpand false
       :hexpand true
       (box
         :class "details"
@@ -666,7 +667,7 @@
     :y "5px"
     :anchor "top right"
     :width "300px"
-    :height "190px"
+    ; :height "190px"
   )
   :namespace "eww_popup"
   (network_control)

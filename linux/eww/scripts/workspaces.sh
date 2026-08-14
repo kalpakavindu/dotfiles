@@ -2,30 +2,45 @@
 # Written by KalpaKavindu <kalpadevonline@gmail.com>
 
 workspaces () {
-  focussed=""
+  local focussed=""
+  
   if [[ "$1" == "s" ]]; then
-    focussed=$(hyprctl activeworkspace | grep 'workspace ID' | awk '{print $3}')
+    focussed=$(hyprctl activeworkspace | grep -oP 'workspace ID \K-?\d+')
   else
     focussed=$(echo "$1" | grep -oE '[0-9]+')
   fi
+
+  local ws=()
   
-  declare -a ws
   while read -r id; do
-    elem=$((id - 1))
-    
+    [[ -z "$id" ]] && continue
+
+    local active=0
+    local icon=""
+
+    # Check active state
     if [[ "$focussed" == "$id" ]]; then
-      ws[$elem]="{\"id\":$id,\"active\":1,\"icon\":\"\"}"
-    else
-      ws[$elem]="{\"id\":$id,\"active\":0,\"icon\":\"\"}"
+      active=1
+      icon=""
     fi
-  done < <(hyprctl workspaces | grep 'workspace ID' | awk '{print $3}')
-  
-  o="["
-  for j in "${ws[@]}"; do
-    o+="$j,"
-  done
-  o="${o::-1}]"
-  echo "$o"
+
+    # # Handle special/negative workspace icon
+    # if (( id < 1 )); then
+    #   icon="󰰣"
+    # fi
+
+    
+    if (( id > 0 )); then
+      # Append formatted JSON object safely to array
+      ws+=("{\"id\":$id,\"active\":$active,\"icon\":\"$icon\"}")
+    fi
+
+  done < <(hyprctl workspaces | grep -oP 'workspace ID \K-?\d+')
+
+  # Join array elements into a valid JSON array
+  local output
+  output=$(printf ",%s" "${ws[@]}")
+  echo "[${output:1}]"
 }
 
 handler () {

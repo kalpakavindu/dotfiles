@@ -15,46 +15,45 @@ is_wifi_enabled () {
 }
 
 get_current_interface () {
-  interface=$(ip route | grep "default" | awk 'NR==1 {print $5}')
-  if [[ "$interface" == "" ]]; then
-    CURRENT_INTERFACE=""
-    CURRENT_IP=""
-    CURRENT_CONNECTION_NAME=""
-    return
+  CURRENT_INTERFACE=""
+  CURRENT_IP=""
+  CURRENT_CONNECTION_NAME=""
+
+  local _ dev
+  read -r _ _ _ _ dev _ < <(ip route show default 2>/dev/null)
+
+  if [[ -n "$dev" ]]; then
+    CURRENT_INTERFACE="$dev"
+
+    local ip_line
+    read -r _ ip_line _ < <(ip -4 addr show dev "$dev" scope global 2>/dev/null | grep -w inet)
+    CURRENT_IP="${ip_line%%/*}"
+
+    CURRENT_CONNECTION_NAME=$(nmcli -t -f DEVICE,NAME c show --active 2>/dev/null | awk -F: -v d="$dev" '$1==d {print $2; exit}')
   fi
-  CURRENT_INTERFACE="$interface"
-  CURRENT_IP=$(ip addr show dev $interface | grep -w inet | awk '{print $2}')
-  CURRENT_CONNECTION_NAME=$(nmcli -f 'device,name' c show --active | grep -w "$interface" | awk 'NR==1 {
-    n = ""
-    for (i = 2; i <= NF; i++) {
-      n = n $i " "
-    }
-    sub(/ *$/, "", n)
-    print n
-  }')
 }
 
 get_enp_list () {
-  if [[ "$(nmcli d | grep ethernet | grep connected)" == "" ]]; then
-    list="[]"
-  else
-    list=""
-    while IFS=" " read -r ifname cname; do
-      if [[ "$CURRENT_INTERFACE" == "$ifname" ]]; then
-        list+="{\"ifname\":\"$ifname\",\"cname\":\"${cname//%sep%/' '}\",\"inuse\":1},"
-      else
-        list+="{\"ifname\":\"$ifname\",\"cname\":\"${cname//%sep%/' '}\",\"inuse\":0},"
-      fi
-      done < <(nmcli d | grep "ethernet" | grep "connected" | awk '{
-      c = ""
-      for (i = 4; i<= NF; i++) {
-        c = c $i "%sep%"
-      }
-      sub(/%sep%*$/, "", c)
-      print $1 " " c
-    }')
-    list="[${list::-1}]"
+  local list="[]"
+  local items=()
+  local ifname type state cname
+
+  while IFS=':' read -r ifname type state cname; do
+    if [[ "$type" == "ethernet" && "$state" == "connected" ]]; then
+      local inuse=0
+      [[ "$CURRENT_INTERFACE" == "$ifname" ]] && inuse=1
+
+      cname="${cname//\"/\\\"}"
+      items+=("{\"ifname\":\"$ifname\",\"cname\":\"$cname\",\"inuse\":$inuse}")
+    fi
+  done < <(nmcli -t -f DEVICE,TYPE,STATE,CONNECTION device)
+
+  if (( ${#items[@]} > 0 )); then
+    local joined
+    joined=$(printf ",%s" "${items[@]}")
+    list="[${joined:1}]"
   fi
+
   eww update net_enp_list="$list"
 }
 
@@ -69,26 +68,19 @@ get_icon () {
 }
 
 get_wifi_icon () {
-  if [[ "$2" == 1 ]]; then
-    if [[ "$1" -le "25" ]];then
-      echo "󰤡"
-      elif [[ "$1" -le "50" ]]; then
-      echo "󰤤"
-      elif [[ "$1" -le "75" ]]; then
-      echo "󰤧"
-    else
-      echo "󰤪"
-    fi
+  local signal="${1//[^0-9]/}"
+  local secured="$2"
+  [[ -z "$signal" ]] && signal=0
+
+  local idx=$(( signal / 25 ))
+  (( idx > 3 )) && idx=3
+
+  if (( secured == 1 )); then
+    local icons=("󰤡" "󰤤" "󰤧" "󰤪")
+    echo "${icons[$idx]}"
   else
-    if [[ "$1" -le "25" ]];then
-      echo "󰤟"
-      elif [[ "$1" -le "50" ]]; then
-      echo "󰤢"
-      elif [[ "$1" -le "75" ]]; then
-      echo "󰤥"
-    else
-      echo "󰤨"
-    fi
+    local icons=("󰤟" "󰤢" "󰤥" "󰤨")
+    echo "${icons[$idx]}"
   fi
 }
 
@@ -134,14 +126,22 @@ get_wifi () {
 
 toggle_wifi () {
   if [[ "$(is_wifi_enabled)" == "1" ]]; then
-    eww update net_wifi_active=false
+    eww update net_wifi_active=false net_wifi='{}' 2>/dev/null
     nmcli r wifi off
-    eww update net_wifi='{}'
   else
     nmcli r wifi on
     get_wifi
-    eww update net_wifi_active=true
+    eww update net_wifi_active=true 2>/dev/null
   fi
+}
+
+update_all_net () {
+  get_current_interface
+  get_icon
+
+  eww update net_ifname="$CURRENT_INTERFACE" 2>/dev/null
+  get_enp_list
+  get_wifi
 }
 
 if [[ "$(is_wifi_enabled)" == "1" ]];then
@@ -153,17 +153,10 @@ fi
 
 case $1 in
   --listen-icon)
-    get_current_interface
-    eww update net_ifname="$CURRENT_INTERFACE"
-    get_icon
-    get_enp_list
-    get_wifi
+    update_all_net
+    
     nmcli m | while read -r line; do
-      get_current_interface
-      eww update net_ifname="$CURRENT_INTERFACE"
-      get_icon
-      get_enp_list
-      get_wifi
+      update_all_net
     done
   ;;
   

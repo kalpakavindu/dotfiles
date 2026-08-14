@@ -10,7 +10,7 @@ listener(){
     
     if [[ "$dnd" == "true" ]]; then
       echo "󰂛"
-      elif [[ "$count" == "0" ]]; then
+    elif [[ "$count" == "0" ]]; then
       echo "󰂚"
     else
       echo "󱅫"

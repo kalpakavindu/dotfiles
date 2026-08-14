@@ -16,7 +16,7 @@ outputDevice=alsa_output.pci-0000_06_00.6.HiFi__Headphones__sink
 plugins=equalizer#0,bass_enhancer#0,limiter#0
 usedPresets=Wired Ear Phone:12,Woofer WASAM F-2000:4
 visiblePage=pluginsPage
-visiblePlugin=bass_enhancer#0
+visiblePlugin=limiter#0
 
 [Window]
 autostartOnLogin=true

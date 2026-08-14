@@ -25,6 +25,7 @@
     "source": "/home/kalpakavindu/Source/dotfiles/assets/ascii-art.txt",
     "padding": {
       "top": 1,
+      "left": 1,
       "right": 2
     },
   },

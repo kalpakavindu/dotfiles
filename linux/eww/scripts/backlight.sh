@@ -2,48 +2,43 @@
 # Written by KalpaKavindu <kalpadevonline@gmail.com>
 
 BRIGHTNESS_DIR="/sys/class/backlight/amdgpu_bl2"
+if [[ ! -d "$BRIGHTNESS_DIR" ]]; then
+  BRIGHTNESS_DIR=$(find /sys/class/backlight/ -maxdepth 1 -mindepth 1 | head -n 1)
+fi
 
 BRIGHTNESS_PATH="$BRIGHTNESS_DIR/brightness"
-MAX_BRIGHTNESS=$(cat "$BRIGHTNESS_DIR/max_brightness")
+read -r MAX_BRIGHTNESS < "$BRIGHTNESS_DIR/max_brightness"
+
+# Icon array by 10%
+ICONS=("󰛩" "󱩎" "󱩏" "󱩐" "󱩑" "󱩒" "󱩓" "󱩔" "󱩕" "󰛨")
 
 get_brightness () {
-  b=$(cat "$BRIGHTNESS_PATH")
-  bp=$(echo "$b * 100 / $MAX_BRIGHTNESS" | bc -l | awk '{printf "%.0f", $1}')
-  
-  if [[ "$bp" -le "10" ]]; then
-    echo "󰛩"
-    elif [[ "$bp" -le "20" ]]; then
-    echo "󱩎"
-    elif [[ "$bp" -le "30" ]]; then
-    echo "󱩏"
-    elif [[ "$bp" -le "40" ]]; then
-    echo "󱩑"
-    elif [[ "$bp" -le "50" ]]; then
-    echo "󱩑"
-    elif [[ "$bp" -le "60" ]]; then
-    echo "󱩒"
-    elif [[ "$bp" -le "70" ]]; then
-    echo "󱩓"
-    elif [[ "$bp" -le "80" ]]; then
-    echo "󱩔"
-    elif [[ "$bp" -le "90" ]]; then
-    echo "󱩕"
-  else
-    echo "󰛨"
-  fi
-  
+  local b bp idx icon
+  read -r b < "$BRIGHTNESS_PATH"
+  bp=$(( (b * 100 + MAX_BRIGHTNESS / 2) / MAX_BRIGHTNESS ))
+  idx=$(( bp / 10 ))
+
+  (( idx > 9 )) && idx=9
+  (( bp == 100 )) && idx=9
+
+  icon="${ICONS[$idx]}"
+
+  echo "$icon"
   eww update back_lev="$bp"
 }
 
 set_brightness () {
-  if [[ ("$1" -ge "2") && ("$1" -le "100") ]];then
-    brightnessctl s "$1"%
+  local val="$1"
+  if (( val >= 2 && val <= 100 )); then
+    brightnessctl s "${val}%"
   fi
 }
 
 toggle_eye () {
-  if [[ "$(eww get eye_comf_on)" == "false" ]]; then
-    hyprctl hyprsunset temperature $1
+  local temp="${1:-4500}"
+
+  if [[ "$(eww get eye_comf_on 2>/dev/null)" == "false" ]]; then
+    hyprctl hyprsunset temperature "$temp"
     eww update eye_comf_on="true"
   else
     hyprctl hyprsunset identity
@@ -51,14 +46,16 @@ toggle_eye () {
   fi
 }
 
-if [[ "$1" == "--listen-brightness" ]]; then
+listen_brightness () {
   get_brightness
-  inotifywait -m -e modify "$BRIGHTNESS_PATH" | while read -r _; do
+  inotifywait -m -e modify "$BRIGHTNESS_PATH" 2>/dev/null | while read -r _; do
     get_brightness
   done
-fi
+}
 
-case $1 in
-  --set) set_brightness "$2" ;;
-  --toggle-eye) toggle_eye "$2" ;;
+case "$1" in
+  --listen-brightness) listen_brightness ;;
+  --set)               set_brightness "$2" ;;
+  --toggle-eye)        toggle_eye "$2" ;;
+  *)                   get_brightness ;;
 esac
