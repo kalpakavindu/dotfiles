@@ -436,6 +436,19 @@ calendar:indeterminate {
         background-color: rgba($foreground, 0.1);
       }
     }
+
+    .details {
+      color: $color5;
+
+      .icon {
+        font-size: 16px;
+        margin-right: 10px;
+      }
+
+      .sep {
+        padding: 0px 2.5px;
+      }
+    }
   }
 }
 
@@ -667,3 +680,4 @@ calendar:indeterminate {
     color: $color6;
   }
 }
+

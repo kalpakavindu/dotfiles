@@ -22,7 +22,12 @@ toggle (){
 }
 
 dmenu(){
-  wofi -s "$WOFI_STYLE_FILE" -c "$WOFI_CONFIG_FILE" --dmenu
+  ps cax | grep wofi > /dev/null
+  if [ $? -eq 0 ]; then
+    killall wofi
+  else
+    wofi -s "$WOFI_STYLE_FILE" -c "$WOFI_CONFIG_FILE" --dmenu
+  fi
 }
 
 

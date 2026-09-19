@@ -35,7 +35,7 @@ workspaces () {
       ws+=("{\"id\":$id,\"active\":$active,\"icon\":\"$icon\"}")
     fi
 
-  done < <(hyprctl workspaces | grep -oP 'workspace ID \K-?\d+')
+  done < <(hyprctl workspaces | grep -oP 'workspace ID \K-?\d+' | sort -n)
 
   # Join array elements into a valid JSON array
   local output

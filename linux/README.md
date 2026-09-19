@@ -54,6 +54,67 @@ To verify keyring daemon integration run,
 busctl --user tree org.freedesktop.secrets
 ```
 
+## Security
+
+### Firewall configuration
+
+Ensure installed `ufw`
+
+```bash
+sudo pacman -S ufw
+sudo systemctl enable --now ufw
+
+# Set baseline policies
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Turn on the firewall
+sudo ufw enable
+```
+
+### Apparmor
+
+Ensure installed `apparmor`
+
+```bash
+sudo systemctl enable --now apparmor
+
+# Verify Settings
+aa-status
+```
+
+### Kernel & Memory Hardening
+
+Create `/etc/sysctl.d/99-security.conf`
+```ini
+# Restrict dmesg (kernel logs) access to root only
+kernel.dmesg_restrict = 1
+
+# Hide kernel pointers from unprivileged users
+kernel.kptr_restrict = 2
+
+# Restrict ptrace (prevents processes from inspecting/injecting into other processes)
+kernel.yama.ptrace_scope = 2
+
+# Disable unprivileged eBPF
+kernel.unprivileged_bpf_disabled = 1
+
+# Harden BPF JIT compiler against JIT spraying attacks
+net.core.bpf_jit_harden = 2
+```
+
+Apply changes
+```bash
+sudo sysctl --system
+```
+
+### Package and AUR safety
+
+```bash
+sudo pacman -S arch-audit
+arch-audit
+```
+
 ## Software
 
 - [`visual-studio-code-bin`<sup>AUR</sup>](./vscode/README.md)

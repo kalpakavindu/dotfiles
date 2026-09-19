@@ -11,6 +11,7 @@
 (defvar mic_dev "Sound Input")
 (defvar sound_server "Disabled")
 
+(defvar mon_rr "60")
 (defvar back_lev "0")
 (defvar eye_comf_on "false")
 (defvar back_dev "Brightness")
@@ -19,7 +20,7 @@
 (defvar bat_chr "0")
 (defvar bat_chr_def "0")
 (defvar bat_cap "0")
-(defvar pow_mod "2")
+(defvar power_mode_name "Balanced")
 
 (defvar net_ifname "")
 (defvar net_wifi_active false)
@@ -31,6 +32,8 @@
 (defvar not_count "0")
 
 ; Listners
+(deflisten power_mode "scripts/power.sh --listen")
+
 (deflisten workspaces_arr :initial "[]" "scripts/workspaces.sh")
 (deflisten back_icon :initial "󰛩" "scripts/backlight.sh --listen-brightness")
 (deflisten vol_icon :initial "" "scripts/volume.sh --listen-volume")
@@ -156,14 +159,14 @@
     :hexpand true
     :class "pmenu"
     
-    (_pmenu_item :onclick "" :label "Lock Screen" :icon "󰌾")
-    (_pmenu_item :onclick "uwsm stop" :label "Logout" :icon "󰍃")
+    (_pmenu_item :onclick "pidof hyprlock || hyprlock" :label "Lock Screen" :icon "󰌾")
+    (_pmenu_item :onclick "/home/kalpakavindu/Source/dotfiles/linux/hypr/scripts/logout.sh" :label "Logout" :icon "󰍃")
     
     (_seperator :hide false)
     
     (_pmenu_item :onclick "systemctl suspend" :label "Suspend" :icon "󰒲")
     (_pmenu_item :onclick "systemctl reboot" :label "Restart" :icon "󰜉")
-    (_pmenu_item :onclick "systemctl hibernate" :label "Hibernate" :icon "󰤁")
+    ; (_pmenu_item :onclick "systemctl hibernate" :label "Hibernate" :icon "󰤁")
     (_pmenu_item :onclick "systemctl poweroff" :label "Shutdown" :icon "󰐥")
     
   )
@@ -302,6 +305,43 @@
       :level {back_lev}
       :icon "󰈈"
     )
+
+    (box
+      :class "footer"
+      :orientation "h"
+      :space-evenly false
+      :vexpand false
+      :hexpand true
+      (box
+        :class "details"
+        :orientation "h"
+        :space-evenly false
+        :hexpand true
+        :vexpand false
+        :halign "start"
+        (box
+          :class "display_data"
+          :orientation "h"
+          :space-evenly false
+          :hexpand false
+          :width 110
+          (label :text "󰍹" :class "icon")
+          (label :text "1920x1080 @ ${mon_rr} Hz")
+        )
+      )
+      
+      (box
+        :orientation "h"
+        :space-evenly false
+        :halign "end"
+        :hexpand true
+        (button
+          :class "settings_btn"
+          :onclick "scripts/backlight.sh --toggle-rr"
+          ""
+        )
+      )
+    )
   )
 )
 
@@ -335,7 +375,7 @@
       :vexpand true
       :hexpand true
       (label :class "title" :text "Mode:")
-      (label :class "text" :text {pow_mod == "0" ? "Best battery" : pow_mod == "1" ? "Balanced" : "Best performance"})
+      (label :class "text" :text {power_mode_name})
     )
     (box
       :class "profile_control"
@@ -345,22 +385,22 @@
       :vexpand true
       :hexpand true
       (_tile
-        :command "eww update pow_mod=0"
-        :active "${pow_mod == 0}"
+        :command "scripts/power.sh --set saver"
+        :active "${power_mode == "power-saver"}"
         :tooltip "Best battery"
         :icon "󰩆"
         :timeout "200ms"
       )
       (_tile
-        :command "eww update pow_mod=1"
-        :active "${pow_mod == 1}"
+        :command "scripts/power.sh --set balanced"
+        :active "${power_mode == "balanced"}"
         :tooltip "Balanced"
         :icon "󰇻"
         :timeout "200ms"
       )
       (_tile
-        :command "eww update pow_mod=2"
-        :active "${pow_mod == 2}"
+        :command "scripts/power.sh --set perf"
+        :active "${power_mode == "performance"}"
         :tooltip "Best performance"
         :icon "󰇺"
         :timeout "200ms"

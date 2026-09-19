@@ -1,17 +1,17 @@
 -- Written by KalpaKavindu <kalpadevonline@gmail.com>
 
 local terminal = "uwsm app -- alacritty"
-local fileManager = "uwsm app -- nautilus --new-window"
+local fileManager = "nautilus --new-window"
 local scriptDir = "/home/kalpakavindu/.config/hypr/scripts"
 local ewwScript = "/home/kalpakavindu/.config/eww/scripts/launch.sh"
 local finder = "/home/kalpakavindu/.config/wofi/launch.sh"
 
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("pidof code | xargs kill -9 && uwsm stop"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(scriptDir .. "/logout.sh"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(finder .. " -t"))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("playerctl -a pause && hyprlock"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | " .. finder .. " -dm | cliphist decode | wl-copy"))
 
 -- Window
@@ -28,10 +28,10 @@ hl.bind(mainMod .. " + RIGHT", hl.dsp.focus({ direction = "r" }))
 hl.bind(mainMod .. " + UP", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + DOWN", hl.dsp.focus({ direction = "d" }))
 
-hl.bind(mainMod .. " + ALT + LEFT", hl.dsp.window.move({ direction = "l", window = "active" }))
-hl.bind(mainMod .. " + ALT + RIGHT", hl.dsp.window.move({ direction = "r", window = "active" }))
-hl.bind(mainMod .. " + ALT + UP", hl.dsp.window.move({ direction = "u", window = "active" }))
-hl.bind(mainMod .. " + ALT + DOWN", hl.dsp.window.move({ direction = "d", window = "active" }))
+hl.bind(mainMod .. " + SHIFT + LEFT", hl.dsp.window.move({ direction = "l", window = "active" }))
+hl.bind(mainMod .. " + SHIFT + RIGHT", hl.dsp.window.move({ direction = "r", window = "active" }))
+hl.bind(mainMod .. " + SHIFT + UP", hl.dsp.window.move({ direction = "u", window = "active" }))
+hl.bind(mainMod .. " + SHIFT + DOWN", hl.dsp.window.move({ direction = "d", window = "active" }))
 ---------
 
 -- Workspace

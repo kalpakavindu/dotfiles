@@ -53,9 +53,60 @@ listen_brightness () {
   done
 }
 
+
+
+MONITOR="eDP-1"
+
+get_refresh_rate () {
+  local rate=""
+
+  if command -v jq &>/dev/null; then
+    rate=$(hyprctl monitors -j 2>/dev/null | jq -r ".[] | select(.name == \"$MONITOR\") | .refreshRate | round" 2>/dev/null)
+  else
+    # Fallback parsing without jq
+    rate=$(hyprctl monitors 2>/dev/null | awk -v mon="$MONITOR" '
+      $0 ~ mon { found=1 }
+      found && /@/ {
+        sub(/.*@/, "");
+        sub(/\..*/, "");
+        print $1;
+        exit
+      }
+    ')
+  fi
+
+  echo "${rate:-60}"
+}
+
+toggle_refresh_rate () {
+  local current_rate
+  current_rate=$(get_refresh_rate)
+
+  if [[ "$current_rate" == "60" ]]; then
+    hyprctl eval 'hl.monitor({ output = "eDP-1", mode = "1920x1080@144", position = "auto", scale = 1 })' &> /dev/null
+    eww update mon_rr="144"
+  else
+    hyprctl eval 'hl.monitor({ output = "eDP-1", mode = "1920x1080@60", position = "auto", scale = 1 })' &> /dev/null
+    eww update mon_rr="60"
+  fi
+}
+
+set_refresh_rate () {
+  if [[ "$1" == "60" ]]; then
+    hyprctl eval 'hl.monitor({ output = "eDP-1", mode = "1920x1080@60", position = "auto", scale = 1 })' &> /dev/null
+    eww update mon_rr="60"
+  else
+    hyprctl eval 'hl.monitor({ output = "eDP-1", mode = "1920x1080@144", position = "auto", scale = 1 })' &> /dev/null
+    eww update mon_rr="144"
+  fi
+}
+
 case "$1" in
   --listen-brightness) listen_brightness ;;
   --set)               set_brightness "$2" ;;
   --toggle-eye)        toggle_eye "$2" ;;
+  --get-rr)            get_refresh_rate ;;
+  --set-rr)            set_refresh_rate "$2" ;;
+  --toggle-rr)         toggle_refresh_rate ;;
   *)                   get_brightness ;;
 esac
