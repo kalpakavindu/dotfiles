@@ -1,0 +1,23 @@
+[Unit]
+Description=Attach and Mount Cross-Platform DevDrive VHDX
+After=mnt-local_drive.mount
+RequiresMountsFor=/mnt/local_drive
+BindsTo=mnt-local_drive.mount
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStartPre=/usr/bin/modprobe nbd max_part=8
+ExecStartPre=/usr/bin/qemu-nbd -c /dev/nbd0 /mnt/local_drive/disks/devdrive.vhdx
+ExecStartPre=/usr/bin/udevadm settle
+ExecStartPre=/usr/bin/mkdir -p /mnt/dev_drive
+ExecStart=/usr/bin/mount -t ntfs3 -o rw,noatime,uid=1000,gid=1000,fmask=0022,dmask=0022,iocharset=utf8,windows_names,prealloc /dev/nbd0p1 /mnt/dev_drive
+
+ExecStop=/usr/bin/umount /mnt/dev_drive
+ExecStopPost=/usr/bin/qemu-nbd -d /dev/nbd0
+
+TimeoutStopSec=15
+
+[Install]
+WantedBy=multi-user.target
