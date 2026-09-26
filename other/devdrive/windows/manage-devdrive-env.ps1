@@ -10,7 +10,7 @@ param (
 
 $ErrorActionPreference = "Stop"
 
-$ConfigFile = Join-Path $DriveRoot "devdrive-config.json"
+$ConfigFile = Join-Path $DriveRoot "windows-config.json"
 if (-not (Test-Path $ConfigFile)) {
     throw "Configuration file not found: $ConfigFile"
 }
